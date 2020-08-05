@@ -1,0 +1,55 @@
+@import "../../node_modules/govuk-frontend/govuk/all.scss";
+@import "variables.scss";
+@import "components/button.scss";
+@import "components/progression.scss";
+
+body, html {
+    font-family: "GDS Transport", Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+// Layout
+@media (min-width: 40em) {
+    .app-hero {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+
+    .app-hero-container {
+        max-width: 75%;
+    }
+}
+
+.app-hero {
+    margin-top: 3px;
+    padding: 50px 10px 20px;
+    background-color: $redcross-shaded;
+    text-align: center;
+}
+
+.app-hero-container {
+    margin: 0 auto;
+}
+
+.redcross-header {
+    @extend .govuk-header;
+    background-color: $redcross-header-background;
+    box-shadow: 0 0 3px 1px $redcross-darkgrey;
+}
+
+.redcross-header__container {
+    @extend .govuk-header__container;
+    border: none;
+    padding-top: 20px;
+}
+
+.redcross-header__logo {
+    @extend .govuk-header__logo;
+    margin-bottom: 20px;
+}
+
+.redcross-footer {
+    @extend .govuk-footer;
+    background-color: $redcross-footer-background;
+}

@@ -3,15 +3,10 @@ import express from 'express';
 const path = require('path');
 const nunjucks = require('nunjucks');
 
-// Helper variables
-// const isDev: Boolean = ENV === 'development';
-// const lang: string = nconf.get('lang');
-
 // Express
 const app: express.Application = express();
 
 // Middleware to serve static assets
-app.use('/public', express.static(path.join(__dirname, '/public')))
 app.use('/assets', express.static(path.join(__dirname, '/assets')))
 
 // View engine setup

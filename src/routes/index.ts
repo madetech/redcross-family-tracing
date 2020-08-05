@@ -8,4 +8,10 @@ router.get('/', (req, res) => {
     });
 });
 
+router.get('/enquiry', (req, res) => {
+    res.render('enquiry', {
+        page: 'Make an Enquiry'
+    });
+});
+
 export = router;

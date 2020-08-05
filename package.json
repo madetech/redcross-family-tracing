@@ -9,8 +9,11 @@
     "build": "npx tsc -p .",
     "start": "node src/app.js",
     "start:watch": "nodemon",
+    "sass": "node-sass src/sass -o src/assets/css",
+    "sass:watch": "node-sass -w src/sass -o src/assets/css",
     "test:cypress": "node_modules/.bin/cypress run --spec **/*.features",
-    "test:cypress:open": "node_modules/.bin/cypress open"
+    "test:cypress:open": "node_modules/.bin/cypress open",
+    "dev": "npm run start:watch & npm run sass:watch"
   },
   "nodemonConfig": {
     "exec": "npm run build && npm start",
@@ -36,8 +39,6 @@
     "@types/node": "^14.0.27",
     "cypress": "^4.12.0",
     "cypress-cucumber-preprocessor": "^2.5.4",
-    "gulp": "^4.0.2",
-    "gulp-sass": "^4.1.0",
     "node-sass": "^4.14.1",
     "nodemon": "^2.0.4",
     "ts-node": "^8.10.2",

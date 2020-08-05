@@ -1,0 +1,21 @@
+{% from "components/button.njk" import redcrossButton %}
+{% from "components/progression.njk" import redcrossProgression %}
+
+{% extends "_layout.njk" %}
+
+{% block content %}
+
+    <div class="govuk-width-container">
+
+        <main class="govuk-main-wrapper">
+
+            {{ redcrossProgression() }}
+
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds"></div>
+            </div>
+
+        </main>
+    </div>
+
+{% endblock %}}

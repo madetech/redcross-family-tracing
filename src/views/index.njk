@@ -1,34 +1,81 @@
 {% from "components/button.njk" import redcrossButton %}
-{% from "_heading.njk" import heading %}
 
 {% extends "_layout.njk" %}
 
 {% block content %}
 
+  <div class="app-hero">
+    <div class="app-hero-container">
+      <h1 class="govuk-heading-xl">Find missing family</h1>
+      <p class="govuk-body">Get help finding missing relatives abroad if you have been separated by war, natural disaster or migration.</p>
+      {{ redcrossButton({
+        text: "Make an enquiry",
+        href: "enquiry"
+      }) }}
+    </div>
+  </div>
+
   <div class="govuk-width-container">
 
     <main class="govuk-main-wrapper">
 
-      <div class="app-masthead">
-        <div class="app-width-container">
-          <div class="govuk-grid-row">
-            <div class="govuk-grid-column-two-thirds-from-desktop">
-              <h1 class="govuk-heading-xl app-masthead__title">Find missing family</h1>
-              <p class="govuk-body">Get help finding missing relatives abroad if you have been separated by war, natural disaster or migration.</p>
-              {{ redcrossButton({
-                text: "Make an enquiry"
-              }) }}
-            </div>
-          </div>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <h2>We find families in 2 ways</h2>
+          <ol>
+            <li>
+              <b>Keeping an international database of people looking for their family</b>
+              <br/>This is so your family can find you online or via any Red Cross/Red Crescent group where they are.
+            </li>
+            <li>
+              <b> Actively looking for relatives abroad</b>
+              <br/>We send all the information you have about your missing relative to Red Cross volunteers in the country you are looking in. You can apply for one or both of these services.
+            </li>
+          </ol>
         </div>
       </div>
 
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
-          
+          <h2>Who are the British Red Cross?</h2>
+          <ul>
+            <li>
+              <b>Part of an international movement </b>
+              <br/>We are part of a movement of 141 National Societies who work together to find relatives who have lost contact with each other.
+            </li>
+            <li>
+              <b>Neutral and independent</b>
+              <br/>We do not work for the Home Office, the government, social services or any other organisation.
+            </li>
+            <li>
+              <b>Experienced</b>
+              <br/>Since 1870 the International Committee of the Red Cross has been finding and keeping families together.
+            </li>
+          </ul>
         </div>
       </div>
 
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <h2>Who can make an enquiry?</h2>
+          <p>We accept enquiries from anyone who has lost contact with their family through:</p>
+          <ul>
+            <li>Conflict</li>
+            <li>Migration or displacement</li>
+            <li>Natural Disaster</li>
+          </ul>
+          <p>We are unable to take applications where families have lost contact within the UK, such as:</p>
+          <ul>
+            <li>Family disputes</li>
+            <li>Adoption</li>
+          </ul>
+          {{ redcrossButton({
+            text: "Make an enquiry",
+            href: "enquiry"
+          }) }}
+
+        </div>
+      </div>
     </main>
   </div>
 
