@@ -10,6 +10,9 @@ const nunjucks = require('nunjucks');
 // Express
 const app: express.Application = express();
 
+// Middleware to serve static assets
+app.use('/public', express.static(path.join(__dirname, '/public')))
+
 // View engine setup
 const views: string[] = [
     path.join(__dirname, 'views'),
