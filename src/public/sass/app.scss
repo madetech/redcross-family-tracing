@@ -1,0 +1,5 @@
+@import '../../../node_modules/govuk-frontend/govuk/all.scss';
+
+.test {
+    color: red($color: #000000);
+}

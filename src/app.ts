@@ -8,7 +8,6 @@ const nunjucks = require('nunjucks');
 // const lang: string = nconf.get('lang');
 const views: string = path.join(__dirname, 'views');
 
-
 // Express
 const app: express.Application = express();
 
@@ -21,14 +20,17 @@ app.set('views', views);
 app.set('view engine', 'njk');
 
 const env = nunjucks.configure(views, {
-    autoescape: true,
-    express: app,
-    watch: true
-  });
+  autoescape: true,
+  express: app,
+  watch: true
+});
+
+app.use('/public', express.static(path.join(__dirname, '/public')))
+
 
 // Routes
 app.use(require('./routes'));
 
 app.listen(listeningPort, () => {
-    console.log(`Listening on http://localhost:${listeningPort}`);
+  console.log(`Listening on http://localhost:${listeningPort}`);
 });
