@@ -3,14 +3,48 @@
 $redcross-header-background: govuk-colour("white");
 $redcross-footer-background: #193351;
 
+$redcross-shaded: #f6f6f6;
 
-// $govuk-header-border-color: $govuk-brand-colour;
-// $govuk-header-border-width: govuk-spacing(2);
-// $govuk-header-text: govuk-colour("white");
-// $govuk-header-link: govuk-colour("white");
-// $govuk-header-link-hover: govuk-colour("white");
-// $govuk-header-link-active: #1d8feb;
-// $govuk-header-nav-item-border-color: #2e3133;
+// Buttons
+$redcross-button-colour: #D0021B; // sass-lint:disable no-color-literals
+$redcross-button-hover-colour: govuk-shade($redcross-button-colour, 20%);
+$redcross-button-text-colour: govuk-colour("white");
+
+.redcross-button {
+    @extend .govuk-button;
+    background-color: $redcross-button-colour;
+    box-shadow: none;
+    padding-left: 10px;
+
+    &:hover {
+        background-color: $redcross-button-hover-colour;
+    }
+}
+
+// Layout
+
+@media (min-width: 40em) {
+    .app-masthead {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+
+    .app-width-container {
+        margin-right: unquote('max(30px, calc(15px + env(safe-area-inset-right)))');
+        margin-left: unquote('max(30px, calc(15px + env(safe-area-inset-left)))');
+    }
+}
+
+.app-masthead {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: $redcross-shaded;
+}
+
+.app-width-container {
+    margin-right: unquote('max(15px, calc(15px + env(safe-area-inset-right)))');
+    margin-left: unquote('max(15px, calc(15px + env(safe-area-inset-left)))');
+}
 
 .redcross-header {
     @extend .govuk-header;
