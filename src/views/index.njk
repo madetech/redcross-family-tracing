@@ -1,8 +1,11 @@
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "_heading.njk" import heading %}
+
 {% extends "_layout.njk" %}
 
 {% block content %}
 
-{% from "govuk/components/button/macro.njk" import govukButton %}
+{{ heading("Hello World!") }}
 
 {{ govukButton({
 text: "Save and continue"
