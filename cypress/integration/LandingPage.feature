@@ -5,6 +5,6 @@ Feature: Landing Page
 
   Scenario: Landing page shows correct heading
     When I visit the landing page
-    Then I see "Hello World!" in the page heading
+    Then I see "Find missing family" in the page heading
 
 

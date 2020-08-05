@@ -1,5 +1,8 @@
 .idea
+cypress/screenshots
+!cypress/screenshots/.gitkeep
 cypress/videos
+!cypress/videos/.gitkeep
 node_modules
 src/**/*.js
 src/assets

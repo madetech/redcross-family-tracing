@@ -4,11 +4,14 @@ on:
     push:
         branches:
             - master
+    pull_request:
+
 jobs:
     build:
         runs-on: ubuntu-latest
         steps:
-            - uses: actions/checkout@v2
+            - name: Checkout code
+              uses: actions/checkout@v2
 
             - name: Install dependencies
               run: npm install
@@ -16,9 +19,32 @@ jobs:
             - name: Transpile
               run: npm run build
 
-            # Todo: Run Cypress tests (will need to run app first)
+            - name: Run Cypress end to end tests
+              uses: cypress-io/github-action@v2
+              with:
+                  install: false
+                  start: npm run start
+                  wait-on: http://localhost:3000
+                  spec: cypress/integration/All.features
 
-            - uses: akhileshns/heroku-deploy@v3.4.6
+
+            - name: Store Cypress screenshot artifacts
+              if: always()
+              uses: actions/upload-artifact@v1
+              with:
+                  name: cypress-screenshots
+                  path: cypress/screenshots
+
+            - name: Store Cypress video artifacts
+              if: always()
+              uses: actions/upload-artifact@v1
+              with:
+                  name: cypress-videos
+                  path: cypress/videos
+
+            - name: Deploy to Production
+              if: github.ref == 'refs/heads/master'
+              uses: akhileshns/heroku-deploy@v3.4.6
               with:
                   heroku_api_key: ${{secrets.HEROKU_API_KEY}}
                   heroku_app_name: "redcross-family-tracing"
