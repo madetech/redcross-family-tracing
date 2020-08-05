@@ -1,0 +1,25 @@
+name: Test and Deploy
+
+on:
+    push:
+        branches:
+            - master
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+
+            - name: Install dependencies
+              run: npm install
+
+            - name: Transpile
+              run: npm run build
+
+            # Todo: Run Cypress tests (will need to run app first)
+
+            - uses: akhileshns/heroku-deploy@v3.4.6
+              with:
+                  heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+                  heroku_app_name: "redcross-family-tracing"
+                  heroku_email: ${{secrets.HEROKU_EMAIL}}
