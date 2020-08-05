@@ -8,3 +8,6 @@ Feature: Landing Page
     Then I see "Find missing family" in the page heading
 
 
+  Scenario: Landing page has make enquiry link
+    When I visit the landing page
+    Then I see link to "enquiry" in hero

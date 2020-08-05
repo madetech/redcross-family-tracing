@@ -2,9 +2,9 @@
 
     <div class="app-progression">
         <ul class="app-progression-bar">
-            <li class="active">What we do</li>
-            <li>Check eligibility</li>
-            <li>Submit an enquiry</li>
+            <li {%- if params.active == "1" %} class="active" {% endif %}>What we do</li>
+            <li {%- if params.active == "2" %} class="active" {% endif %}>Check eligibility</li>
+            <li {%- if params.active == "3" %} class="active" {% endif %}>Submit an enquiry</li>
         </ul>
     </div>
 {% endmacro %}
