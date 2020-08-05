@@ -1,5 +1,7 @@
 # British Red Cross Family Tracing
 
+![Test and Deploy](https://github.com/madetech/redcross-family-tracing/workflows/Test%20and%20Deploy/badge.svg?branch=master)
+
 Description TBC
 
 ## Installation
