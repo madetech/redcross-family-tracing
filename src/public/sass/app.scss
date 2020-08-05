@@ -1,5 +1,29 @@
-@import '../../../node_modules/govuk-frontend/govuk/all.scss';
+@import "../../../node_modules/govuk-frontend/govuk/all.scss";
 
-.test {
-    color: red($color: #000000);
+$redcross-header-background: govuk-colour("white");
+$redcross-footer-background: #193351;
+
+
+// $govuk-header-border-color: $govuk-brand-colour;
+// $govuk-header-border-width: govuk-spacing(2);
+// $govuk-header-text: govuk-colour("white");
+// $govuk-header-link: govuk-colour("white");
+// $govuk-header-link-hover: govuk-colour("white");
+// $govuk-header-link-active: #1d8feb;
+// $govuk-header-nav-item-border-color: #2e3133;
+
+.redcross-header {
+    @extend .govuk-header;
+    background-color: $redcross-header-background;
+    box-shadow: 0px 2px rgba(0, 0, 0, 0.25);
+}
+
+.redcross-header__container {
+    @extend .govuk-header__container;
+    border: none;
+}
+
+.redcross-footer {
+    @extend .govuk-footer;
+    background-color: $redcross-footer-background;
 }

@@ -2233,7 +2233,7 @@
     outline: 3px solid #ffdd00;
     box-shadow: inset 0 0 0 4px #0b0c0c; }
 
-.govuk-footer {
+.govuk-footer, .redcross-footer {
   font-family: "GDS Transport", Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -2247,22 +2247,22 @@
   color: #0b0c0c;
   background: #f3f2f1; }
   @media print {
-    .govuk-footer {
+    .govuk-footer, .redcross-footer {
       font-family: sans-serif; } }
   @media (min-width: 40.0625em) {
-    .govuk-footer {
+    .govuk-footer, .redcross-footer {
       font-size: 16px;
       font-size: 1rem;
       line-height: 1.25; } }
   @media print {
-    .govuk-footer {
+    .govuk-footer, .redcross-footer {
       font-size: 14pt;
       line-height: 1.2; } }
   @media (min-width: 40.0625em) {
-    .govuk-footer {
+    .govuk-footer, .redcross-footer {
       padding-top: 40px; } }
   @media (min-width: 40.0625em) {
-    .govuk-footer {
+    .govuk-footer, .redcross-footer {
       padding-bottom: 25px; } }
 
 .govuk-footer__link:link, .govuk-footer__link:visited, .govuk-footer__link:hover, .govuk-footer__link:active {
@@ -2418,7 +2418,7 @@
 .govuk-footer__list-item:last-child {
   margin-bottom: 0; }
 
-.govuk-header {
+.govuk-header, .redcross-header {
   font-family: "GDS Transport", Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -2430,15 +2430,15 @@
   color: #ffffff;
   background: #0b0c0c; }
   @media print {
-    .govuk-header {
+    .govuk-header, .redcross-header {
       font-family: sans-serif; } }
   @media (min-width: 40.0625em) {
-    .govuk-header {
+    .govuk-header, .redcross-header {
       font-size: 16px;
       font-size: 1rem;
       line-height: 1.25; } }
   @media print {
-    .govuk-header {
+    .govuk-header, .redcross-header {
       font-size: 14pt;
       line-height: 1.2; } }
 
@@ -2448,12 +2448,12 @@
   .govuk-header__container--full-width .govuk-header__menu-button {
     right: 15px; }
 
-.govuk-header__container {
+.govuk-header__container, .redcross-header__container {
   position: relative;
   margin-bottom: -10px;
   padding-top: 10px;
   border-bottom: 10px solid #1d70b8; }
-  .govuk-header__container:after {
+  .govuk-header__container:after, .redcross-header__container:after {
     content: "";
     display: block;
     clear: both; }
@@ -2716,7 +2716,7 @@
   margin-right: 0; }
 
 @media print {
-  .govuk-header {
+  .govuk-header, .redcross-header {
     border-bottom-width: 0;
     color: #0b0c0c;
     background: transparent; }
@@ -4381,5 +4381,12 @@
     .govuk-\!-width-one-quarter {
       width: 25% !important; } }
 
-.test {
-  color: 0; }
+.redcross-header {
+  background-color: #ffffff;
+  box-shadow: 0px 2px rgba(0, 0, 0, 0.25); }
+
+.redcross-header__container {
+  border: none; }
+
+.redcross-footer {
+  background-color: #193351; }
