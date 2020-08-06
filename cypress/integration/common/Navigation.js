@@ -1,6 +1,6 @@
 import {Then, When} from "cypress-cucumber-preprocessor/steps";
-import {pageNameToPath} from "./pageNameToPath";
-import {elementNameToClass} from "./elementNameToClass";
+import {pageNameToPath} from "./support/pageNameToPath";
+import {elementNameToClass} from "./support/elementNameToClass";
 
 When(
     /^I visit the "([^"]*)" page$/, (pageName) => {
