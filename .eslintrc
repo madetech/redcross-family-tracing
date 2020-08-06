@@ -1,0 +1,32 @@
+{
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "es6": true,
+    "node": true,
+    "jest": true,
+    "cypress/globals": true
+  },
+  "plugins": ["cypress"],
+  "parser": "babel-eslint",
+  "extends": ["eslint:recommended", "plugin:prettier/recommended"],
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaVersion": 2018
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "rules": {
+    "linebreak-style": ["error", "unix"],
+    "max-len": ["error", { "code": 100 }],
+    "prettier/prettier": ["error", {
+      "singleQuote": true,
+      "printWidth": 100
+    }],
+    "quotes": ["error", "single", { "allowTemplateLiterals": true }],
+    "require-atomic-updates": "off"
+  }
+}
