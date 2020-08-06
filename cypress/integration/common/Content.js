@@ -1,6 +1,7 @@
 import { Then, When } from "cypress-cucumber-preprocessor/steps";
 import { elementNameToClass } from "./elementNameToClass";
 import { pageNameToPath } from "./pageNameToPath";
+import { textToValue } from "./textToValue";
 
 Then(
     /^I see "([^"]*)" in the page heading$/,
@@ -35,5 +36,12 @@ When(
         button.contains(buttonText, { matchCase: false });
         button.should('have.attr', 'href')
             .and('equal', pageNameToPath[pageName]);
+    }
+);
+
+When(/^I select "([^"]*)" radio button$/,
+    function(radioText){
+        const radioButton = cy.get('[type="radio"]');
+        radioButton.check(textToValue[radioText]);
     }
 );

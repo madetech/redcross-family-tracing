@@ -14,4 +14,13 @@ router.get('/what-help', (req, res) => {
     res.render('what-help');
 });
 
+router.get('/family-reunion', (req, res) => {
+    res.render('family-reunion');
+});
+
+
+router.get('*', function(req, res){
+    res.send('404');
+  });
+
 export = router;
