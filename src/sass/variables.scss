@@ -22,3 +22,7 @@ $redcross-shaded: $redcross-lightgrey;
 $redcross-button-colour: $redcross-red;
 $redcross-button-hover-colour: govuk-shade($redcross-button-colour, 20%);
 $redcross-button-text-colour: govuk-colour("white");
+
+// Box
+$redcross-box-border-width: 2px;
+$redcross-box-border-radius: 10px;

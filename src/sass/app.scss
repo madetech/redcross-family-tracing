@@ -69,6 +69,13 @@ body, html {
     margin-bottom: 10px;
 }
 
+.redcross-content__box {
+    border: $redcross-box-border-width solid $redcross-grey;
+    border-radius: $redcross-box-border-radius;
+    padding: 15px 50px;
+    margin-top: 15px;
+}
+
 .redcross-footer {
     @extend .govuk-footer;
     background-color: $redcross-footer-background;
