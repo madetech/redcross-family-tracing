@@ -7,7 +7,8 @@ Feature: Landing Page
     When I visit the landing page
     Then I see "Find missing family" in the page heading
 
-
-  Scenario: Landing page has make enquiry link
+  Scenario: Landing page has make enquiry button
     When I visit the landing page
-    Then I see link to "enquiry" in hero
+#    Then I see link to "enquiry" in hero
+    And I see a "Make an enquiry" button linking to the "Make an enquiry" page in the "hero" element
+    And I see a "Make an enquiry" button linking to the "Make an enquiry" page in the "content" element
