@@ -9,11 +9,7 @@ Feature: Landing Page
   Scenario: Landing page shows correct heading
     Then I see "Find missing family" in the page heading
 
-  Scenario: Landing page has make enquiry button
-    Then I see a "make an enquiry" button linking to the "make an enquiry" page in the "hero" element
-    And I see a "make an enquiry" button linking to the "make an enquiry" page in the "content" element
-
-  Scenario Outline: Clicking the enquiry button in the "<element>" element navigates to the enquiry page
+  Scenario Outline: Has enquiry button in the "<element>" element which navigates to the enquiry page
     When I click the "make an enquiry" button in the "<element>" element
     Then I am on the "make an enquiry" page
     Examples:
