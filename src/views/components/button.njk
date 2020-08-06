@@ -2,10 +2,16 @@
 
 {% macro redcrossButton(params) %}
 
+{%- set classNames = "redcross-button" -%}
+{%- if params.classes %}
+  {% set classNames = classNames + " " + params.classes %}
+{% endif %}
+
 {{ govukButton({
   text: params.text ,
-  classes: 'redcross-button',
-  href: params.href
+  classes: classNames,
+  href: params.href,
+  attributes: params.attributes
 }) }}
 
 {% endmacro %}

@@ -26,6 +26,10 @@ router.get('/relative-message', (req, res) => {
   res.render('relative-message');
 });
 
+router.get('/check-eligibility', (req,res)=>{
+  res.send('ok');
+});
+
 router.post('/director', (req, res) => {
   const page = req.body.page;
   if (page) {

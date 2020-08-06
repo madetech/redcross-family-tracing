@@ -3,15 +3,15 @@
 $redcross-red: #d0021b;
 $redcross-grey: #e0e0e0;
 $redcross-lightgrey: #f6f6f6;
+$redcross-medium-grey: #9caaae;
 $redcross-darkgrey: #262626;
 $redcross-navy: #193351;
 $redcross-white: #ffffff;
 $redcross-black: #000000;
-$redcross-green: #40A22A;
+$redcross-green: #40a22a;
 
 $redcross-focus-colour: $redcross-red;
 $redcross-focus-text-colour: $redcross-white;
-
 
 // Theme
 $redcross-header-background: govuk-colour("white");
@@ -23,6 +23,10 @@ $redcross-shaded: $redcross-lightgrey;
 $redcross-button-colour: $redcross-red;
 $redcross-button-hover-colour: govuk-shade($redcross-button-colour, 20%);
 $redcross-button-text-colour: govuk-colour("white");
+
+$redcross-button-secondary-colour: $redcross-medium-grey;
+$redcross-button-secondary-hover-colour: govuk-shade($redcross-button-secondary-colour, 20%);
+$redcross-button-secondary-text-colour: govuk-colour("white");
 
 // Box
 $redcross-box-border-width: 2px;

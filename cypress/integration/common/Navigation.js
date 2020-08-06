@@ -1,6 +1,7 @@
 import {Then, When} from "cypress-cucumber-preprocessor/steps";
 import {pageNameToPath} from "./support/pageNameToPath";
 import {elementNameToClass} from "./support/elementNameToClass";
+import {textToId} from "./support/textToValue";
 
 When(/^I do nothing$/, ()=>{});
 
@@ -21,7 +22,8 @@ When(
 When(
     /^I click the "([^"]*)" button$/,
     (buttonText) => {
-        cy.get('.redcross-button').click();
+        const id = textToId[buttonText];
+        cy.get(`#${id}`).click();
     }
 );
 

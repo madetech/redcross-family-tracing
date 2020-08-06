@@ -36,7 +36,7 @@
                         <form method="POST" action="/director">
                             {{ govukRadios({
                             idPrefix: "what-help",
-                            name: "page",                        
+                            name: "page",
                             items: [
                                 {
                                 text: "Finding family",
@@ -53,7 +53,10 @@
                             ]
                         }) }}
 
-                            {{ redcrossButton({ text: "Continue" }) }}
+                            {{ redcrossButton({
+                              text: "Continue",
+                              attributes: { id: "continue-button" }
+                              }) }}
                         </form>
                     </div>
                 </div>
