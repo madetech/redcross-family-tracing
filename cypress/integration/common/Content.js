@@ -1,11 +1,6 @@
-import { Then, When } from "cypress-cucumber-preprocessor/steps";
+import { Then } from "cypress-cucumber-preprocessor/steps";
 import { elementNameToClass } from "./elementNameToClass";
 import { pageNameToPath } from "./pageNameToPath";
-
-When(
-    /^I visit the "([^"]*)" page$/, (pageName) => {
-        cy.visit(pageNameToPath[pageName]);
-    });
 
 Then(
     /^I see "([^"]*)" in the page heading$/,
