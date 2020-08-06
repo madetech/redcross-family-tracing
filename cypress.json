@@ -1,4 +1,6 @@
 {
     "baseUrl": "http://localhost:3000",
-    "testFiles": "**/*.{feature,features}"
+    "testFiles": "**/*.{feature,features}",
+    "viewportWidth": 1000,
+    "viewportHeight": 1000
 }

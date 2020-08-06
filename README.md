@@ -22,6 +22,10 @@ This will recompile and restart the app any time you make changes to the source 
 
 Then you can just click `All.features` or a specific feature to run the tests. They will re run automatically any time you make a change to one of the test files.
 
+You can run the tests slower to demonstrate to stakeholders, e.g.
+
+    CYPRESS_COMMAND_DELAY=1000 npm run test:cypress:open
+
 ## Continuous integration/deployment pipeline
 
 The app uses GitHub Actions to build/test all commits to master and deploys them to Heroku at https://redcross-family-tracing.herokuapp.com/ if the tests are successful.
