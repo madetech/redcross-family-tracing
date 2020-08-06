@@ -12,9 +12,9 @@ Description TBC
 
 ## Start the app
 
-    npm run start:watch
+    npm run dev
 
-This will recompile and restart the app any time you make changes to the source files.
+This will recompile and restart the app any time you make changes to the source or sass files.
 
 ## Run the Cypress tests
 
