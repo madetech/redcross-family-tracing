@@ -2,6 +2,8 @@ import {Then, When} from "cypress-cucumber-preprocessor/steps";
 import {pageNameToPath} from "./support/pageNameToPath";
 import {elementNameToClass} from "./support/elementNameToClass";
 
+When(/^I do nothing$/, ()=>{});
+
 When(
     /^I visit the "([^"]*)" page$/, (pageName) => {
         cy.visit(pageNameToPath[pageName]);

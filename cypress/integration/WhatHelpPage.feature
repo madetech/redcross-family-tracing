@@ -28,3 +28,7 @@ Feature: What Help Page
     Then I click the "continue" button
     Then I am on the "send message to relatives" page
 
+  Scenario: Selecting nothing and clicking continue navigates to the What Help page
+    When I do nothing
+    Then I click the "continue" button
+    Then I am on the "what help are you looking for today" page
