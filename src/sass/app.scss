@@ -10,7 +10,7 @@ body, html {
 }
 
 // Layout
-@media (min-width: 40em) {
+@media (min-width: 40.0625em) {
     .app-hero {
         padding-top: 30px;
         padding-bottom: 30px;
@@ -18,6 +18,18 @@ body, html {
 
     .app-hero-container {
         max-width: 75%;
+    }
+
+    
+
+    .redcross-header__content {
+        margin-top: 18px;
+    }
+}
+
+@media (min-width: 48.063em) {
+    .redcross-header__logo {
+        border-right: 2px solid $redcross-black;
     }
 }
 
@@ -53,6 +65,8 @@ body, html {
     @extend .govuk-header__content;
     color: $redcross-red;
     text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 10px;
 }
 
 .redcross-footer {

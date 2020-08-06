@@ -5,4 +5,4 @@ cypress/videos
 !cypress/videos/.gitkeep
 node_modules
 src/**/*.js
-src/assets
+src/assets/css
