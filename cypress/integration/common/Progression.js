@@ -1,4 +1,4 @@
-import { Then, When } from "cypress-cucumber-preprocessor/steps";
+import { Then } from "cypress-cucumber-preprocessor/steps";
 
 Then(
     /^the progression bar is at "([^"]*)"$/,

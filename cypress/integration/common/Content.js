@@ -1,4 +1,4 @@
-import { Then } from "cypress-cucumber-preprocessor/steps";
+import { Then, When } from "cypress-cucumber-preprocessor/steps";
 import { elementNameToClass } from "./elementNameToClass";
 import { pageNameToPath } from "./pageNameToPath";
 
@@ -15,6 +15,25 @@ Then(
         const button = cy.get(`${elementNameToClass[containingElement]} .redcross-button`);
         button.contains(buttonText, { matchCase: false });
         button.should('have.attr', 'href')
-            .and('equal', pageNameToPath[pageName])
+            .and('equal', pageNameToPath[pageName]);
+    }
+);
+
+Then(/^I see a "([^"]*)" link linking to the "([^"]*)" page$/,
+    function (linkText, pageName) {
+        const link = cy.get('.redcross-back-link');
+        link.contains(linkText, { matchCase: false });
+        link.should('have.attr', 'href')
+            .and('equal', pageNameToPath[pageName]);
+    }
+);
+
+When(
+    /^I see a "([^"]*)" button linking to the "([^"]*)" page$/,
+    function (buttonText, pageName) {
+        const button = cy.get('.redcross-button');
+        button.contains(buttonText, { matchCase: false });
+        button.should('have.attr', 'href')
+            .and('equal', pageNameToPath[pageName]);
     }
 );

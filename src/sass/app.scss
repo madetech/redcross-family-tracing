@@ -3,7 +3,8 @@
 @import "components/button.scss";
 @import "components/progression.scss";
 
-body, html {
+body,
+html {
     font-family: "GDS Transport", Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -19,8 +20,6 @@ body, html {
     .app-hero-container {
         max-width: 75%;
     }
-
-    
 
     .redcross-header__content {
         margin-top: 18px;
@@ -42,6 +41,29 @@ body, html {
 
 .app-hero-container {
     margin: 0 auto;
+}
+
+.redcross-back-link {
+    color: $redcross-green;
+    text-decoration: none;
+    font-weight: bold;
+
+    &::before {
+        border-color: unset;
+    }
+
+    &[href] {
+        text-decoration: none;
+    }
+
+    &:link,
+    &:visited {
+        color: $redcross-green;
+    }
+
+    &:hover {
+        text-decoration: underline;
+    }
 }
 
 .redcross-header {

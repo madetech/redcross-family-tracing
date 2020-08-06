@@ -1,0 +1,23 @@
+{% from "components/button.njk" import redcrossButton %}
+{% from "components/progression.njk" import redcrossProgression %}
+
+{% extends "_layout.njk" %}
+
+{% block content %}
+
+    <div class="govuk-width-container">
+
+        <main class="govuk-main-wrapper">
+
+            {{ redcrossProgression({ active: "1"}) }}
+
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-full">
+                    <p>WHAT HELP TBC</p>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+{% endblock %}}
