@@ -16,4 +16,4 @@ Feature: What Help Page
   Scenario: Selecting Finding Family and clicking continue navigates to the Family Reunion page
     When I select "finding family" radio button
     Then I click the "continue" button
-    #Then I am on the "family reunion" page
+    Then I am on the "family reunion" page

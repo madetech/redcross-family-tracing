@@ -33,10 +33,10 @@
                     <div class="redcross-content__box">
 
                         <h1 class="govuk-heading-xl">What help are you looking for today?</h1>
-
-                        {{ govukRadios({
+                        <form method="POST" action="/director">
+                            {{ govukRadios({
                             idPrefix: "what-help",
-                            name: "what-help",                        
+                            name: "page",                        
                             items: [
                                 {
                                 text: "Finding family",
@@ -53,7 +53,8 @@
                             ]
                         }) }}
 
-                         {{ redcrossButton({ text: "Continue" }) }}
+                            {{ redcrossButton({ text: "Continue" }) }}
+                        </form>
                     </div>
                 </div>
             </div>

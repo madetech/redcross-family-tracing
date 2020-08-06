@@ -18,6 +18,9 @@ router.get('/family-reunion', (req, res) => {
     res.render('family-reunion');
 });
 
+router.post('/director', (req, res) => {
+    res.redirect(req.body.page);
+});
 
 router.get('*', function(req, res){
     res.send('404');
