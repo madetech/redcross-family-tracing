@@ -1,4 +1,4 @@
 export const pageNameToPath = {
-    'landing page': '/',
+    'landing': '/',
     'make an enquiry': '/enquiry'
 };

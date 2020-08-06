@@ -4,10 +4,10 @@ Feature: Landing Page
   So I know what to do next
 
   Scenario: Landing page shows correct heading
-    When I visit the "landing page"
+    When I visit the "landing" page
     Then I see "Find missing family" in the page heading
 
   Scenario: Landing page has make enquiry button
-    When I visit the "landing page"
+    When I visit the "landing" page
     And I see a "make an enquiry" button linking to the "make an enquiry" page in the "hero" element
     And I see a "make an enquiry" button linking to the "make an enquiry" page in the "content" element
