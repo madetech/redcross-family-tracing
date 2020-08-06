@@ -1,7 +1,7 @@
 import { Then, When } from "cypress-cucumber-preprocessor/steps";
-import { elementNameToClass } from "./elementNameToClass";
-import { pageNameToPath } from "./pageNameToPath";
-import { textToValue } from "./textToValue";
+import { elementNameToClass } from "./support/elementNameToClass";
+import { pageNameToPath } from "./support/pageNameToPath";
+import { textToValue } from "./support/textToValue";
 
 Then(
     /^I see "([^"]*)" in the page heading$/,
