@@ -17,3 +17,14 @@ Feature: What Help Page
     When I select "finding family" radio button
     Then I click the "continue" button
     Then I am on the "family reunion" page
+
+  Scenario: Selecting Bringing Family safely to the UK and clicking continue navigates to the Find Family Two Ways page
+    When I select "bringing family safely to the uk" radio button
+    Then I click the "continue" button
+    Then I am on the "we find families in two ways" page
+
+  Scenario: Selecting Sending a message to hard to reach relatives and clicking continue navigates to the Family Reunion page
+    When I select "Sending a message to hard to reach relatives" radio button
+    Then I click the "continue" button
+    Then I am on the "send message to relatives" page
+

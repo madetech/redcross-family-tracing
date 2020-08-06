@@ -18,6 +18,14 @@ router.get('/family-reunion', (req, res) => {
     res.render('family-reunion');
 });
 
+router.get('/find-two-ways', (req, res) => {
+    res.render('find-two-ways');
+});
+
+router.get('/relative-message', (req, res) => {
+    res.render('relative-message');
+});
+
 router.post('/director', (req, res) => {
     res.redirect(req.body.page);
 });
