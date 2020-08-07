@@ -1,5 +1,5 @@
 import * as express from 'express';
-import { countries } from '../assets/data/country'
+import { countries } from '../assets/data/country';
 
 const router = express.Router();
 
@@ -42,7 +42,6 @@ router.get('/where-start-looking', (req, res) => {
 router.get('/not-eligible', (req, res) => {
   res.send("We can't help");
 });
-
 
 router.get('/data/countries', (req, res) => {
   res.send(countries);
