@@ -55,4 +55,4 @@ router.get('*', function (req, res) {
   res.send('404');
 });
 
-export = router;
+module.exports = router;
