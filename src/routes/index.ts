@@ -31,8 +31,12 @@ router.get('/check-eligibility', (req, res) => {
 });
 
 router.get('/how-lose-contact', (req, res) => {
-  res.send('ok');
-})
+  res.render('how-lose-contact');
+});
+
+router.get('/where-start-looking', (req, res)=> {
+  res.send('hey');
+});
 
 router.post('/director', (req, res) => {
   const page = req.body.page;
