@@ -13,7 +13,7 @@
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-full">
 
-          {{ redcrossProgression({ active: "1"}) }}
+          {{ redcrossProgression({ active: "2"}) }}
         </div>
       </div>
 
@@ -22,7 +22,7 @@
 
           {{ govukBackLink({
                     text: "Back",
-                    href: "/what-help",
+                    href: "/find-two-ways",
                     classes: "redcross-back-link"
                 }) }}
         </div>
@@ -32,19 +32,20 @@
         <div class="govuk-grid-column-full">
 
           <div class="redcross-content__box">
-            <h1 class="govuk-heading-xl">We find familes in two ways:</h1>
+            <h1 class="govuk-heading-xl">Check which service(s) you are eligible for</h1>
+            <p class="govuk-body">Whether you use our missing persons register or start an active search depends on:</p>
+            <ol>
+            <li>How much information we are given</li>
+            <li>Who we can safely share that information with</li>
+            </ol>
+
+            <p class="govuk-body"><b>Answer the next few questions to check eligibility.</b></p>
 
             {{ redcrossButton({
-                            text: "Find out more",
-                            href: "/what-help"
-                        }) }}
-            <br/>
-            {{ redcrossButton({
-                            text: "skip to check eligibility",
-                            href: "/check-eligibility",
-                            classes: "redcross-button--secondary",
-                            attributes: { id: "skip-to-check-button" }
-                        }) }}
+                        text: "check eligibility",
+                        href: "/how-lose-contact",
+                        attributes: { id: "check-eligibility-button" }
+                    }) }}
           </div>
         </div>
       </div>

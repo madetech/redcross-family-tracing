@@ -5,5 +5,6 @@ export const pageNameToPath = {
     'family reunion': '/family-reunion',
     'we find families in two ways':'/find-two-ways',
     'send message to relatives': '/relative-message',
-    'check eligibility':'/check-eligibility'
+    'check eligibility':'/check-eligibility',
+    'how did you lose contact with your family':'/how-lose-contact'
 };

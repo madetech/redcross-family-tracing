@@ -7,5 +7,6 @@ export const textToValue = {
 export const textToId = {
   'start': 'start-button',
   'skip to check eligibility': 'skip-to-check-button',
-  'continue': 'continue-button'
+  'continue': 'continue-button',
+  'check eligibility' : 'check-eligibility-button'
 }
