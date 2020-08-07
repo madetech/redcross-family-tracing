@@ -16,7 +16,7 @@ app.use('/assets', express.static(path.join(__dirname, '/assets')));
 
 // View engine setup
 const views: string[] = [path.join(__dirname, 'views'), 'node_modules/govuk-frontend/'];
-const nunjucksEnvironment = nunjucks.configure(views, {
+nunjucks.configure(views, {
   autoescape: true,
   express: app,
   watch: true,

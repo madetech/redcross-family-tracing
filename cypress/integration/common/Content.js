@@ -26,7 +26,7 @@ Then(/^I see a "([^"]*)" button linking to the "([^"]*)" page in the "([^"]*)" e
 });
 
 Then(/^I see a "([^"]*)" link linking to the "([^"]*)" page$/, function (linkText, pageName) {
-  assertElementWithTextLinkingToPageExists('.redcross-back-link', buttonText, pageName);
+  assertElementWithTextLinkingToPageExists('.redcross-back-link', linkText, pageName);
 });
 
 When(/^I see a "([^"]*)" button linking to the "([^"]*)" page$/, function (buttonText, pageName) {
