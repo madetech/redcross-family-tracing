@@ -6,3 +6,4 @@ cypress/videos
 node_modules
 src/**/*.js
 src/assets/css
+.DS_Store
