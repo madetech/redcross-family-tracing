@@ -2,11 +2,17 @@
 
 ![Test and Deploy](https://github.com/madetech/redcross-family-tracing/workflows/Test%20and%20Deploy/badge.svg?branch=master)
 
-Description TBC
+Simple web application to help people find out if they are eligible for help finding lost family members.
+
+## Requirements
+
+The app requires [Node.js 12](https://nodejs.org/en/download/) installed to run locally.
+
+We recommend using [NVM](https://github.com/nvm-sh/nvm#installing-and-updating) then you can just run `nvm use` in your terminal and the correct version of Node.js will be installed (if required) and used.
 
 ## Installation
 
-    git clone git@github.com:madetech/redcross-family-tracing.git 
+    git clone git@github.com:madetech/redcross-family-tracing.git
     cd redcross-family-tracing
     npm install
 
