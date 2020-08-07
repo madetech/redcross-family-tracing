@@ -35,7 +35,7 @@ router.get('/how-lose-contact', (req, res) => {
 });
 
 router.get('/where-start-looking', (req, res) => {
-  res.send('hey');
+  res.render('where-start-looking');
 });
 
 router.get('/not-eligible', (req, res) => {
