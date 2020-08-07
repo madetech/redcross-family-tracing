@@ -22,10 +22,6 @@
   "rules": {
     "linebreak-style": ["error", "unix"],
     "max-len": ["error", { "code": 100 }],
-    "prettier/prettier": ["error", {
-      "singleQuote": true,
-      "printWidth": 100
-    }],
     "quotes": ["error", "single", { "allowTemplateLiterals": true }],
     "require-atomic-updates": "off"
   }
