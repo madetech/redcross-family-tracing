@@ -20,9 +20,13 @@
     }
   },
   "rules": {
+    "comma-dangle": ["error", "never"],
     "linebreak-style": ["error", "unix"],
     "max-len": ["error", { "code": 100 }],
-    "quotes": ["error", "single", { "allowTemplateLiterals": true }],
+    "quotes": ["error", "single", {
+      "avoidEscape": true,
+      "allowTemplateLiterals": true
+    }],
     "require-atomic-updates": "off"
   }
 }
