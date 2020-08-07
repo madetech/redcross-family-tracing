@@ -8,4 +8,5 @@ export const pageNameToPath = {
   'check eligibility': '/check-eligibility',
   'how did you lose contact with your family': '/how-lose-contact',
   'where should we start looking': '/where-start-looking',
+  'we cant help with your enquiry': '/not-eligible'
 };

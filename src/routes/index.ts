@@ -34,8 +34,12 @@ router.get('/how-lose-contact', (req, res) => {
   res.render('how-lose-contact');
 });
 
-router.get('/where-start-looking', (req, res)=> {
+router.get('/where-start-looking', (req, res) => {
   res.send('hey');
+});
+
+router.get('/not-eligible', (req, res) => {
+  res.send('We can\'t help');
 });
 
 router.post('/director', (req, res) => {

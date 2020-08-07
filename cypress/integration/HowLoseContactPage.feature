@@ -17,3 +17,8 @@ Feature: How Did You Lose Contact Page
     When I select "during war, natural disaster, or on a journey to the uk" radio button
     Then I click the "check eligibility" button
     Then I am on the "where should we start looking" page
+
+  Scenario: Selecting Something else, such as adoption or a family dispute and clicking continue navigates to the We Can't Help page
+    When I select "something else, such as adoption or a family dispute" radio button
+    Then I click the "check eligibility" button
+    Then I am on the "we cant help with your enquiry" page

@@ -3,6 +3,7 @@ export const textToValue = {
   'bringing family safely to the uk': 'find-two-ways',
   'sending a message to hard to reach relatives': 'relative-message',
   'during war, natural disaster, or on a journey to the uk': 'where-start-looking',
+  'something else, such as adoption or a family dispute': 'not-eligible'
 };
 
 export const textToId = {
