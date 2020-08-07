@@ -32,6 +32,12 @@ You can run the tests slower to demonstrate to stakeholders, e.g.
 
     CYPRESS_COMMAND_DELAY=1000 npm run test:cypress:open
 
+## Formatting the code
+
+To apply our standard rules across the codebase run...
+
+    npm run lint:fix
+
 ## Continuous integration/deployment pipeline
 
 The app uses GitHub Actions to build/test all commits to master and deploys them to Heroku at https://redcross-family-tracing.herokuapp.com/ if the tests are successful.
