@@ -1,4 +1,4 @@
 export const elementNameToClass = {
   content: '.content',
-  hero: '.app-hero',
+  hero: '.app-hero'
 };

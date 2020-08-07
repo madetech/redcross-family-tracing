@@ -9,7 +9,7 @@ const app: express.Application = express();
 // Middleware
 app.use(
   express.urlencoded({
-    extended: true,
+    extended: true
   })
 );
 app.use('/assets', express.static(path.join(__dirname, '/assets')));
@@ -19,7 +19,7 @@ const views: string[] = [path.join(__dirname, 'views'), 'node_modules/govuk-fron
 nunjucks.configure(views, {
   autoescape: true,
   express: app,
-  watch: true,
+  watch: true
 });
 app.engine('njk', nunjucks.render);
 app.set('views', views);

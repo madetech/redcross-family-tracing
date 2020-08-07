@@ -40,7 +40,7 @@ router.get('/where-start-looking', (req, res) => {
 });
 
 router.get('/not-eligible', (req, res) => {
-  res.send('We can\'t help');
+  res.send("We can't help");
 });
 
 
