@@ -7,20 +7,19 @@ const nunjucks = require('nunjucks');
 const app: express.Application = express();
 
 // Middleware
-app.use(express.urlencoded({
-  extended: true
-}));
-app.use('/assets', express.static(path.join(__dirname, '/assets')))
+app.use(
+  express.urlencoded({
+    extended: true,
+  })
+);
+app.use('/assets', express.static(path.join(__dirname, '/assets')));
 
 // View engine setup
-const views: string[] = [
-    path.join(__dirname, 'views'),
-    'node_modules/govuk-frontend/'
-];
+const views: string[] = [path.join(__dirname, 'views'), 'node_modules/govuk-frontend/'];
 const nunjucksEnvironment = nunjucks.configure(views, {
-    autoescape: true,
-    express: app,
-    watch: true
+  autoescape: true,
+  express: app,
+  watch: true,
 });
 app.engine('njk', nunjucks.render);
 app.set('views', views);

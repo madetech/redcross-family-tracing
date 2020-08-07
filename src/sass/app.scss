@@ -1,137 +1,142 @@
-@import "../../node_modules/govuk-frontend/govuk/all.scss";
-@import "variables.scss";
-@import "components/button.scss";
-@import "components/progression.scss";
+@import '../../node_modules/govuk-frontend/govuk/all.scss';
+@import 'variables.scss';
+@import 'components/button.scss';
+@import 'components/progression.scss';
 
 @font-face {
-    font-family: HelveticaNeue;
-    font-weight: 400;
-    src: local("☺"),url(/assets/fonts/3501E9_1_0.woff2?v173b873edde) format("woff2"),url(/assets/fonts/3501E9_1_0.woff?v173b873edde) format("woff")
+  font-family: HelveticaNeue;
+  font-weight: 400;
+  src: local('☺'), url(/assets/fonts/3501E9_1_0.woff2?v173b873edde) format('woff2'),
+    url(/assets/fonts/3501E9_1_0.woff?v173b873edde) format('woff');
 }
 
 @font-face {
-    font-family: HelveticaNeue;
-    font-weight: 700;
-    src: local("☺"),url(/assets/fonts/34FB83_0_0.woff2?v173b873edde) format("woff2"),url(/assets/fonts/34FB83_0_0.woff?v173b873edde) format("woff")
+  font-family: HelveticaNeue;
+  font-weight: 700;
+  src: local('☺'), url(/assets/fonts/34FB83_0_0.woff2?v173b873edde) format('woff2'),
+    url(/assets/fonts/34FB83_0_0.woff?v173b873edde) format('woff');
 }
 
 @font-face {
-    font-family: Montserrat;
-    font-weight: 400;
-    src: local("☺"),url(/assets/fonts/montserrat-light-webfont.woff2?v173b873edde) format("woff2"),url(/assets/fonts/montserrat-light-webfont.woff?v173b873edde) format("woff")
+  font-family: Montserrat;
+  font-weight: 400;
+  src: local('☺'), url(/assets/fonts/montserrat-light-webfont.woff2?v173b873edde) format('woff2'),
+    url(/assets/fonts/montserrat-light-webfont.woff?v173b873edde) format('woff');
 }
 
 @font-face {
-    font-family: Montserrat;
-    font-weight: 600;
-    src: local("☺"),url(/assets/fonts/montserrat-semibold-webfont.woff2?v173b873edde) format("woff2"),url(/assets/fonts/montserrat-semibold-webfont.woff?v173b873edde) format("woff")
+  font-family: Montserrat;
+  font-weight: 600;
+  src: local('☺'), url(/assets/fonts/montserrat-semibold-webfont.woff2?v173b873edde) format('woff2'),
+    url(/assets/fonts/montserrat-semibold-webfont.woff?v173b873edde) format('woff');
 }
 
 @font-face {
-    font-family: Montserrat;
-    font-weight: 700;
-    src: local("☺"),url(/assets/fonts/montserrat-medium-webfont.woff2?v173b873edde) format("woff2"),url(/assets/fonts/montserrat-medium-webfont.woff?v173b873edde) format("woff")
+  font-family: Montserrat;
+  font-weight: 700;
+  src: local('☺'), url(/assets/fonts/montserrat-medium-webfont.woff2?v173b873edde) format('woff2'),
+    url(/assets/fonts/montserrat-medium-webfont.woff?v173b873edde) format('woff');
 }
 
 body,
 html {
-    font-family: Montserrat, sans-serif;
-    margin: 0;
-    padding: 0;
-    font-size: 1.05rem;
-    line-height: 1.6rem;
+  font-family: Montserrat, sans-serif;
+  margin: 0;
+  padding: 0;
+  font-size: 1.05rem;
+  line-height: 1.6rem;
 }
 
 // Layout
 @media (min-width: 40.0625em) {
-    .app-hero {
-        padding-top: 30px;
-        padding-bottom: 30px;
-    }
+  .app-hero {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
 
-    .app-hero-container {
-        max-width: 75%;
-    }
+  .app-hero-container {
+    max-width: 75%;
+  }
 
-    .redcross-header__content {
-        margin-top: 22px;
-        font-size: 1.1rem
-    }
+  .redcross-header__content {
+    margin-top: 22px;
+    font-size: 1.1rem;
+  }
 }
 
 @media (min-width: 48.063em) {
-    .redcross-header__logo {
-        border-right: 2px solid $redcross-black;
-    }
+  .redcross-header__logo {
+    border-right: 2px solid $redcross-black;
+  }
 }
 
 .app-hero {
-    margin-top: 3px;
-    padding: 50px 10px 20px;
-    background-color: $redcross-shaded;
-    text-align: center;
+  margin-top: 3px;
+  padding: 50px 10px 20px;
+  background-color: $redcross-shaded;
+  text-align: center;
 }
 
 .app-hero-container {
-    margin: 0 auto;
+  margin: 0 auto;
 }
 
 .redcross-back-link {
-    color: $redcross-green;
+  color: $redcross-green;
+  text-decoration: none;
+  font-weight: bold;
+
+  &::before {
+    border-color: unset;
+  }
+
+  &[href] {
     text-decoration: none;
-    font-weight: bold;
+  }
 
-    &::before {
-        border-color: unset;
-    }
+  &:link,
+  &:visited {
+    color: $redcross-green;
+  }
 
-    &[href] {
-        text-decoration: none;
-    }
-
-    &:link,
-    &:visited {
-        color: $redcross-green;
-    }
-
-    &:hover {
-        text-decoration: underline;
-    }
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 .redcross-header {
-    @extend .govuk-header;
-    background-color: $redcross-header-background;
-    box-shadow: 0 0 3px 1px $redcross-darkgrey;
+  @extend .govuk-header;
+  background-color: $redcross-header-background;
+  box-shadow: 0 0 3px 1px $redcross-darkgrey;
 }
 
 .redcross-header__container {
-    @extend .govuk-header__container;
-    border: none;
-    padding-top: 20px;
+  @extend .govuk-header__container;
+  border: none;
+  padding-top: 20px;
 }
 
 .redcross-header__logo {
-    @extend .govuk-header__logo;
-    margin-bottom: 20px;
+  @extend .govuk-header__logo;
+  margin-bottom: 20px;
 }
 
 .redcross-header__content {
-    @extend .govuk-header__content;
-    color: $redcross-red;
-    text-transform: uppercase;
-    font-weight: bold;
-    margin-bottom: 10px;
+  @extend .govuk-header__content;
+  color: $redcross-red;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
 .redcross-content__box {
-    border: $redcross-box-border-width solid $redcross-grey;
-    border-radius: $redcross-box-border-radius;
-    padding: 50px;
-    margin-top: 15px;
+  border: $redcross-box-border-width solid $redcross-grey;
+  border-radius: $redcross-box-border-radius;
+  padding: 50px;
+  margin-top: 15px;
 }
 
 .redcross-footer {
-    @extend .govuk-footer;
-    background-color: $redcross-footer-background;
+  @extend .govuk-footer;
+  background-color: $redcross-footer-background;
 }
