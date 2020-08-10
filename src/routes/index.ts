@@ -64,8 +64,9 @@ router.post('/director', (req, res) => {
   res.send('error');
 });
 
+// 404 errors
 router.get('*', function (req, res) {
-  res.send('404');
+  res.status(404).render('error', { errorHeading: 'Page Not Found' });
 });
 
 module.exports = router;

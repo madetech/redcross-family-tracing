@@ -9,6 +9,14 @@ When(/^I visit the "([^"]*)" page$/, (pageName) => {
   cy.visit(pageNameToPath[pageName]);
 });
 
+When(/^I visit a page which does not exist$/, function () {
+  const url = '/this-page-definitely-does-not-exist';
+  // This is for the status code...
+  cy.request({ url, failOnStatusCode: false }).as('lastRequest');
+  // This is for the UI stuff...
+  cy.visit(url, { failOnStatusCode: false });
+});
+
 When(/^I click the "([^"]*)" button in the "([^"]*)" element$/, (buttonText, containingElement) => {
   cy.get(`${elementNameToClass[containingElement]} .redcross-button`).click();
 });
