@@ -1,1 +1,39 @@
-relative-message
+{% from "components/button.njk" import redcrossButton %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+{% extends "_layout.html" %}
+
+{% block content %}
+
+  <div class="govuk-width-container">
+    <main class="govuk-main-wrapper">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+          {{ govukBackLink({
+            text: "Back",
+            href: "/what-help",
+            classes: "redcross-back-link"
+          }) }}
+        </div>
+      </div>
+
+       <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+
+          <div class="redcross-content__box">
+            <h1 class="govuk-heading-xl">You need our messaging service</h1>
+
+            <p>We may be able to send a message to your family if they are in a hard to reach place.</p>
+
+            {{ redcrossButton({
+              text: "Contact your local service for support",
+              href: "https://www.redcross.org.uk/get-help/find-missing-family/find-your-local-missing-family-service"
+            }) }}
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+{% endblock %}}
