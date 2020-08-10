@@ -1,12 +1,16 @@
+// Keep alphabetical for easy finding :-)
 export const pageNameToPath = {
+  'check eligibility': '/check-eligibility',
+  'family reunion': '/family-reunion',
+  'how did you lose contact with your family': '/how-lose-contact',
   landing: '/',
   'make an enquiry': '/enquiry',
-  'what help are you looking for today': '/what-help',
-  'family reunion': '/family-reunion',
-  'we find families in two ways': '/find-two-ways',
+  'redcross find local missing family service':
+    // eslint-disable-next-line max-len
+    'https://www.redcross.org.uk/get-help/find-missing-family/find-your-local-missing-family-service',
   'send message to relatives': '/relative-message',
-  'check eligibility': '/check-eligibility',
-  'how did you lose contact with your family': '/how-lose-contact',
   'where should we start looking': '/where-start-looking',
-  'we cant help with your enquiry': '/not-eligible'
+  'we cant help with your enquiry': '/not-eligible',
+  'we find families in two ways': '/find-two-ways',
+  'what help are you looking for today': '/what-help'
 };

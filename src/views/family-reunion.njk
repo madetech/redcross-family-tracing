@@ -6,26 +6,46 @@
 
 {% block content %}
 
-    <div class="govuk-width-container">
-        <main class="govuk-main-wrapper">
+  <div class="govuk-width-container">
+    <main class="govuk-main-wrapper">
 
-            <div class="govuk-grid-row">
-                <div class="govuk-grid-column-full">
-                    {{ govukBackLink({
-                        text: "Back",
-                        href: "/what-help",
-                        classes: "redcross-back-link"
-                    }) }}
-                </div>
-            </div>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+          {{ redcrossProgression({ active: "1"}) }}
+        </div>
+      </div>
 
-            <div class="govuk-grid-row">
-                <div class="govuk-grid-column-full">
-                    Contact support
-                </div>
-            </div>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+          {{ govukBackLink({
+            text: "Back",
+            href: "/what-help",
+            classes: "redcross-back-link"
+          }) }}
+        </div>
+      </div>
 
-        </main>
-    </div>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+
+          <div class="redcross-content__box">
+            <h1 class="govuk-heading-xl">You need to contact Family Reunion Support</h1>
+
+            <p>We may be able to help you reunite with your family by:</p>
+
+            <ul>
+              <li>Helping with visa applications</li>
+              <li>Arranging flights for your family to join you</li>
+            </ul>
+
+            {{ redcrossButton({
+              text: "Contact your local service for support",
+              href: "https://www.redcross.org.uk/get-help/find-missing-family/find-your-local-missing-family-service"
+            }) }}
+        </div>
+      </div>
+
+    </main>
+  </div>
 
 {% endblock %}}
