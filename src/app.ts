@@ -21,9 +21,9 @@ nunjucks.configure(views, {
   express: app,
   watch: true
 });
-app.engine('njk', nunjucks.render);
+app.engine('html', nunjucks.render);
 app.set('views', views);
-app.set('view engine', 'njk');
+app.set('view engine', 'html');
 
 // Routes
 app.use(require('./routes'));
