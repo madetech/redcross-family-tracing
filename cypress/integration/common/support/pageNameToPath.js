@@ -5,6 +5,7 @@ export const pageNameToPath = {
   'how did you lose contact with your family': '/how-lose-contact',
   landing: '/',
   'make an enquiry': '/enquiry',
+  'not eligible': '/not-eligible',
   'redcross find local missing family service':
     // eslint-disable-next-line max-len
     'https://www.redcross.org.uk/get-help/find-missing-family/find-your-local-missing-family-service',
