@@ -1,6 +1,6 @@
 export const textToValue = {
-  'finding family': 'family-reunion',
-  'bringing family safely to the uk': 'find-two-ways',
+  'finding family': 'find-two-ways',
+  'bringing family safely to the uk': 'family-reunion',
   'sending a message to hard to reach relatives': 'relative-message',
   'during war, natural disaster, or on a journey to the uk': 'where-start-looking',
   'something else, such as adoption or a family dispute': 'not-eligible'
