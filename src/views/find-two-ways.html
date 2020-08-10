@@ -26,25 +26,49 @@
         </div>
       </div>
 
-      <div class="govuk-grid-row">
-        <div class="govuk-grid-column-full">
-          <div class="redcross-content__box">
-            <h1 class="govuk-heading-xl">We find familes in two ways:</h1>
+      <div class="redcross-content__box">
 
-            <p><span style="color:red;">&lt;Need images for this page&gt;<span></p>
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
 
-            {{ redcrossButton({
-                            text: "Find out more"
-                        }) }}
-            <br/>
-            {{ redcrossButton({
-                            text: "skip to check eligibility",
-                            href: "/check-eligibility",
-                            classes: "redcross-button--secondary",
-                            attributes: { id: "skip-to-check-button" }
-                        }) }}
+              <h1 class="govuk-heading-xl">We find familes in two ways:</h1>
           </div>
         </div>
+
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-half">
+            <h2>1. Registering missing people</h2>
+            <p>Your family can find you online, or in any of the 141 Red Cross countries worldwide.</p>
+            <p><span style="color:red;">&lt;Missing image&gt;<span></p>
+          </div>
+
+          <div class="govuk-grid-column-one-half">
+            <h2>2. Actively looking for relatives</h2>
+            <p>Give us info about your relatives so that we can go out and look for them.</p>
+            <p><span style="color:red;">&lt;Missing image&gt;<span></p>
+          </div>
+
+        </div>
+
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+
+              {{ redcrossButton({
+                              text: "Find out more"
+                          }) }}
+              <br/>
+              {{ redcrossButton({
+                              text: "skip to check eligibility",
+                              href: "/check-eligibility",
+                              classes: "redcross-button--secondary",
+                              attributes: { id: "skip-to-check-button" }
+                          }) }}
+            </div>
+          </div>
+      </div>
+
+      <div>
+
       </div>
 
     </main>
