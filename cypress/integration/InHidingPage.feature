@@ -10,7 +10,7 @@ Feature: Are you or your relative's in hiding or in danger page
     Then the progression bar is at "check eligibility"
 
   Scenario: Has a back link to navigate to the where to start looking page
-    When I click the "back" link
+    When I click the back link
     Then I am on the "where should we start looking" page
 
   Scenario: Selecting "No I'm not worried" about searching in public and clicking continue navigates to the Eligible for Both Services page
