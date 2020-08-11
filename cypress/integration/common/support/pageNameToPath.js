@@ -17,6 +17,7 @@ export const pageNameToPath = {
   'relatives in hiding': '/in-hiding',
   'we find families in two ways': '/find-two-ways',
   'what help are you looking for today': '/what-help',
+  'registering missing people information': '/finding-registering',
   'eligible for both': '/eligible-both',
   'eligible for one': '/eligible-one'
 };

@@ -57,6 +57,10 @@ router.get('/eligible-one', (req, res) => {
 
 router.post('/director', directorPost);
 
+router.get('/finding-registering', (req, res) => {
+  res.render('finding-registering');
+});
+
 // 404 errors
 router.get('*', function (req, res) {
   res.status(404).render('error', { errorHeading: 'Page Not Found' });

@@ -30,7 +30,6 @@
 
         <div class="govuk-grid-row">
           <div class="govuk-grid-column-full">
-
               <h1 class="govuk-heading-xl">We find familes in two ways:</h1>
           </div>
         </div>
@@ -49,14 +48,15 @@
           </div>
         </div>
 
-        <br>
+        <br/>
 
         <div class="govuk-grid-row">
           <div class="govuk-grid-column-full">
-
               {{ redcrossButton({
-                              text: "Find out more"
-                          }) }}
+                text: "Find out more",
+                href: "/finding-registering",
+                attributes: { id: "find-out-more-button" }
+              }) }}
               <br/>
               {{ redcrossButton({
                               text: "skip to check eligibility",
@@ -66,10 +66,6 @@
                           }) }}
             </div>
           </div>
-      </div>
-
-      <div>
-
       </div>
 
     </main>

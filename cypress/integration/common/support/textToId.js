@@ -11,5 +11,6 @@ export const textToId = {
   'finding family': 'what-help',
   'bringing family safely to the uk': 'what-help-2',
   'sending a message to hard to reach relatives': 'what-help-3',
-  'one to three countries': 'where-country'
+  'one to three countries': 'where-country',
+  'find out more': 'find-out-more-button'
 };
