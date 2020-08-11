@@ -1,4 +1,4 @@
-import { Then, When } from 'cypress-cucumber-preprocessor/steps';
+import { Given, Then, When } from 'cypress-cucumber-preprocessor/steps';
 import { elementNameToClass } from './support/elementNameToClass';
 import { pageNameToPath } from './support/pageNameToPath';
 import { textToId } from './support/textToId';
@@ -40,4 +40,18 @@ When(/^I select "([^"]*)" radio button$/, function (radioText) {
 
 When(/^I select "([^"]*)" in the "([^"]*)" select box$/, function (value, selectId) {
   cy.get(`#${selectId}`).select(value);
+});
+
+When(/^I click the "([^"]*)" accordion heading$/, function (accordionHeading) {
+  cy.xpath(
+    `//*[@class="govuk-accordion__section-button"][contains(text(),"${accordionHeading}")]`
+  ).click();
+});
+
+Given(/^I do not see a link to the "([^"]*)" page$/, function (pageName) {
+  cy.get(`a[href="${pageNameToPath[pageName]}`).should('not.be.visible');
+});
+
+Then(/^I see a link to the "([^"]*)" page$/, function (pageName) {
+  cy.get(`a[href="${pageNameToPath[pageName]}`).should('be.visible');
 });

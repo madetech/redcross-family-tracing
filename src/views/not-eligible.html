@@ -1,6 +1,7 @@
+{% from "govuk/components/accordion/macro.njk" import govukAccordion %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
 {% from "components/button.njk" import redcrossButton %}
 {% from "components/progression.njk" import redcrossProgression %}
-{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
 
 {% extends "_layout.html" %}
 
@@ -30,11 +31,29 @@
           <p>The British Red Cross can only respond to families who have been separated by war, natural disaster or migration.</p>
           <p>If you were seperated under different circumstances, these organisations can help:</p>
 
-          <ul>
-            <!-- ToDo: https://trello.com/c/O9TLQr34/37-use-correct-content-for-the-organisations-on-the-something-else-not-eligible-page -->
-            <li>Salvation Army (Content TBC)</li>
-            <li>Missing People (Content TBC)</li>
-          </ul>
+          {{ govukAccordion({
+            id: "accordion-default",
+            items: [
+              {
+                heading: {
+                  text: "Salvation Army"
+                },
+                content: {
+                  html: "<p class='govuk-body'>Since 1885 the Salvation Army Family Tracing Service has been helping to reconcile family members who have lost contact with each other and facilitating the rebuilding of these relationships.</p>
+                         <p class='govuk-body'><a class='govuk-link' href='https://www.salvationarmy.org.uk/family-tracing' target='blank'>Visit their website</a></p>"
+                }
+              },
+              {
+                heading: {
+                  text: "Missing People"
+                },
+                content: {
+                  html: "<p class='govuk-body'>Since 1885 the Salvation Army Family Tracing Service has been helping to reconcile family members who have lost contact with each other and facilitating the rebuilding of these relationships.</p>
+                         <p class='govuk-body'><a class='govuk-link' href='https://www.missingpeople.org.uk' target='blank'>Visit their website</a></p>"
+                }
+              }
+            ]
+          }) }}
         </div>
       </div>
     </div>

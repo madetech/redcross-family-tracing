@@ -1,16 +1,20 @@
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Family Tracing - The British Red Cross</title>
-    <link rel="stylesheet" href="/assets/css/app.css">
-    <meta name="theme-color" content="#f3f3f3">
-    <meta name="theme-color" content="#ffffff">
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Family Tracing - The British Red Cross</title>
+  <link rel="stylesheet" href="/assets/css/app.css">
+  <meta name="theme-color" content="#f3f3f3">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
 </head>
 
 <body>
+<script>
+  document.body.className = ((document.body.className)
+    ? document.body.className + ' js-enabled' : 'js-enabled');
+</script>
 
 {% include "./_header.html" %}
 
@@ -18,5 +22,8 @@
 {% endblock %}
 
 {% include "./_footer.html" %}
+
+<script src="/assets/javascript/all.js"></script>
+<script>window.GOVUKFrontend.initAll()</script>
 
 </body>
