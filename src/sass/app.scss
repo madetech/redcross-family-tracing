@@ -1,41 +1,41 @@
-@import '../../node_modules/govuk-frontend/govuk/all.scss';
-@import 'variables.scss';
-@import 'components/button.scss';
-@import 'components/progression.scss';
+@import "../../node_modules/govuk-frontend/govuk/all.scss";
+@import "variables.scss";
+@import "components/button.scss";
+@import "components/progression.scss";
 
 @font-face {
   font-family: HelveticaNeue;
   font-weight: 400;
-  src: local('☺'), url(/assets/fonts/3501E9_1_0.woff2?v173b873edde) format('woff2'),
-    url(/assets/fonts/3501E9_1_0.woff?v173b873edde) format('woff');
+  src: local("☺"), url(/assets/fonts/3501E9_1_0.woff2?v173b873edde) format("woff2"),
+    url(/assets/fonts/3501E9_1_0.woff?v173b873edde) format("woff");
 }
 
 @font-face {
   font-family: HelveticaNeue;
   font-weight: 700;
-  src: local('☺'), url(/assets/fonts/34FB83_0_0.woff2?v173b873edde) format('woff2'),
-    url(/assets/fonts/34FB83_0_0.woff?v173b873edde) format('woff');
+  src: local("☺"), url(/assets/fonts/34FB83_0_0.woff2?v173b873edde) format("woff2"),
+    url(/assets/fonts/34FB83_0_0.woff?v173b873edde) format("woff");
 }
 
 @font-face {
   font-family: Montserrat;
   font-weight: 400;
-  src: local('☺'), url(/assets/fonts/montserrat-light-webfont.woff2?v173b873edde) format('woff2'),
-    url(/assets/fonts/montserrat-light-webfont.woff?v173b873edde) format('woff');
+  src: local("☺"), url(/assets/fonts/montserrat-light-webfont.woff2?v173b873edde) format("woff2"),
+    url(/assets/fonts/montserrat-light-webfont.woff?v173b873edde) format("woff");
 }
 
 @font-face {
   font-family: Montserrat;
   font-weight: 600;
-  src: local('☺'), url(/assets/fonts/montserrat-semibold-webfont.woff2?v173b873edde) format('woff2'),
-    url(/assets/fonts/montserrat-semibold-webfont.woff?v173b873edde) format('woff');
+  src: local("☺"), url(/assets/fonts/montserrat-semibold-webfont.woff2?v173b873edde) format("woff2"),
+    url(/assets/fonts/montserrat-semibold-webfont.woff?v173b873edde) format("woff");
 }
 
 @font-face {
   font-family: Montserrat;
   font-weight: 700;
-  src: local('☺'), url(/assets/fonts/montserrat-medium-webfont.woff2?v173b873edde) format('woff2'),
-    url(/assets/fonts/montserrat-medium-webfont.woff?v173b873edde) format('woff');
+  src: local("☺"), url(/assets/fonts/montserrat-medium-webfont.woff2?v173b873edde) format("woff2"),
+    url(/assets/fonts/montserrat-medium-webfont.woff?v173b873edde) format("woff");
 }
 
 body,
@@ -139,4 +139,10 @@ html {
 .redcross-footer {
   @extend .govuk-footer;
   background-color: $redcross-footer-background;
+}
+
+.govuk-radios__item {
+  .govuk-select {
+    margin: 14px;
+  }
 }

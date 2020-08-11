@@ -1,5 +1,6 @@
 import * as express from 'express';
-import { countries } from '../assets/data/country';
+import { directorPost } from './handlers/director';
+import { whereGet, wherePost } from './handlers/where-start-looking';
 
 const router = express.Router();
 
@@ -35,34 +36,18 @@ router.get('/how-lose-contact', (req, res) => {
   res.render('how-lose-contact');
 });
 
-router.get('/where-start-looking', (req, res) => {
-  res.render('where-start-looking');
-});
+router.get('/where-start-looking', whereGet);
+router.post('/where-start-looking', wherePost);
 
 router.get('/not-eligible', (req, res) => {
   res.render('not-eligible');
 });
 
-router.get('/data/countries', (req, res) => {
-  res.send(countries);
+router.get('/in-hiding', (req, res) => {
+  res.send('in hiding');
 });
 
-router.post('/director', (req, res) => {
-  const page = req.body.page;
-  if (page) {
-    res.redirect(page);
-    return;
-  }
-
-  const originalPage = req.headers.referer;
-  if (originalPage) {
-    res.redirect(originalPage);
-    return;
-  }
-
-  console.error('There was an error at /director. Page: %d, referer: %d', page, originalPage);
-  res.send('error');
-});
+router.post('/director', directorPost);
 
 // 404 errors
 router.get('*', function (req, res) {

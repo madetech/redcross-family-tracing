@@ -12,7 +12,6 @@
 
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-full">
-
           {{ redcrossProgression({ active: "2"}) }}
         </div>
       </div>
@@ -31,18 +30,76 @@
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-full">
 
-          <div class="redcross-content__box">
-            <h1 class="govuk-heading-xl">Where should we start looking?</h1>
+          <form method="POST">
 
-            {{ redcrossButton({
-                        text: "check eligibility",
-                        attributes: { id: "check-eligibility-button" }
-                    }) }}
-          </div>
+            <div class="redcross-content__box">
+              <h1 class="govuk-heading-xl">Where should we start looking?</h1>
+
+              <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+                  <div class="govuk-radios">
+
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="where-country" name="where" type="radio" value="countries">
+                      <label class="govuk-label govuk-radios__label" for="where-do-you-live">
+                        <u>One</u> to <u>Three</u> countries</label>
+                    </div>
+
+                    <div class="govuk-!-margin-left-8">
+                      <div class="govuk-form-group">
+                        <label class="govuk-label" for="country-1">First country</label>
+                        <select class="govuk-select" id="country-1" name="country">
+                          <option value="">- select -</option>
+                          {% for country in countries %}
+                            <option value="{{ country.key }}">{{ country.name }}</option>
+                          {% endfor %}
+                          <option value="other">Other</option>
+                        </select>
+                      </div>
+
+                      <div class="govuk-form-group">
+                        <label class="govuk-label" for="country-2">Second country (optional)</label>
+                        <select class="govuk-select" id="country-2" name="country">
+                          <option value="">- select -</option>
+                          {% for country in countries %}
+                            <option value="{{ country.key }}">{{ country.name }}</option>
+                          {% endfor %}
+                          <option value="other">Other</option>
+                        </select>
+                      </div>
+
+                      <div class="govuk-form-group">
+                        <label class="govuk-label" for="country-3">Third country (optional)</label>
+                        <select class="govuk-select" id="country-3" name="country">
+                          <option value="">- select -</option>
+                          {% for country in countries %}
+                            <option value="{{ country.key }}">{{ country.name }}</option>
+                          {% endfor %}
+                          <option value="other">Other</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <div class="govuk-radios__item govuk-!-margin-top-7">
+                      <input class="govuk-radios__input" id="where-not-sure" name="where" type="radio" value="not-sure">
+                      <label class="govuk-label govuk-radios__label" for="where-do-you-live">
+                        <u>I'm not sure</u>, they could be anywhere</label>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+
+              {{ redcrossButton({
+                text: "check eligibility",
+                attributes: { id: "check-eligibility-button" }
+              }) }}
+            </div>
+          </form>
         </div>
       </div>
+    </div>
 
-    </main>
-  </div>
+  </main>
+</div>
 
 {% endblock %}}

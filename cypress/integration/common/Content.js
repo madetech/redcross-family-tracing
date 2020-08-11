@@ -36,3 +36,7 @@ When(/^I see a "([^"]*)" button linking to the "([^"]*)" page$/, function (butto
 When(/^I select "([^"]*)" radio button$/, function (radioText) {
   cy.get('[type="radio"]').check(textToValue[radioText]);
 });
+
+When(/^I select "([^"]*)" in the "([^"]*)" select box$/, function (value, selectId) {
+  cy.get(`#${selectId}`).select(value);
+});

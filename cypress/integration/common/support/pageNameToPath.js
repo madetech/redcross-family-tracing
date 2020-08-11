@@ -12,6 +12,7 @@ export const pageNameToPath = {
   'send message to relatives': '/relative-message',
   'where should we start looking': '/where-start-looking',
   'we cant help with your enquiry': '/not-eligible',
+  'relatives in hiding': '/in-hiding',
   'we find families in two ways': '/find-two-ways',
   'what help are you looking for today': '/what-help'
 };
