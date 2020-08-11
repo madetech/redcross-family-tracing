@@ -10,7 +10,7 @@ Feature: What Help Page
     Then the progression bar is at "what we do"
 
   Scenario: Has a back link to navigate to the enquiry
-    When I click the "back" link
+    When I click the back link
     Then I am on the "make an enquiry" page
 
   Scenario: Selecting Finding Family and clicking continue navigates to the Family Reunion page

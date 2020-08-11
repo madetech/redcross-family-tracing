@@ -26,9 +26,7 @@ When(/^I click the "([^"]*)" button$/, (buttonText) => {
   cy.get(`#${id}`).click();
 });
 
-// Todo: fix this...
-// eslint-disable-next-line no-unused-vars
-When(/^I click the "([^"]*)" link$/, (linkText) => {
+When(/^I click the back link$/, () => {
   cy.get('.redcross-back-link').click();
 });
 

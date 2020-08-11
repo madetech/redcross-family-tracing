@@ -10,7 +10,7 @@ Feature: How Did You Lose Contact Page
     Then the progression bar is at "check eligibility"
 
   Scenario: Has a back link to navigate to the check eligibility page
-    When I click the "back" link
+    When I click the back link
     Then I am on the "check eligibility" page
 
   Scenario: Selecting During war, natural disaster, or on a journey to the UK and clicking continue navigates to the Where Start Looking page

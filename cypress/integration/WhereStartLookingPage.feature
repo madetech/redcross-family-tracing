@@ -10,7 +10,7 @@ Feature: Where should we start looking Page
     Then the progression bar is at "check eligibility"
 
   Scenario: Has a back link to navigate to the how did you lose contact page
-    When I click the "back" link
+    When I click the back link
     Then I am on the "how did you lose contact with your family" page
 
   Scenario: Selecting one or more active Countries and clicking check eligibility navigates to Relative In Hiding page

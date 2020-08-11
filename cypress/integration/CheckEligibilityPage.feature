@@ -10,7 +10,7 @@ Feature: Check Eligibility Page
     Then the progression bar is at "check eligibility"
 
   Scenario: Has a back link to navigate to the find families in two ways page
-    When I click the "back" link
+    When I click the back link
     Then I am on the "we find families in two ways" page
 
   Scenario: Clicking the check eligibility button navigates to the how did you lose contact page

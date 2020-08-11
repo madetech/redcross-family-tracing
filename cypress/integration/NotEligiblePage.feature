@@ -7,7 +7,7 @@ Feature: Where should we start looking Page
     Given I visit the "not eligible" page
 
   Scenario: Has a back link to navigate to the how did you lose contact page
-    When I click the "back" link
+    When I click the back link
     Then I am on the "how did you lose contact with your family" page
 
   Scenario: Has a link to the Salvation Army Family Tracing page

@@ -10,7 +10,7 @@ Feature: Find Two Ways Page
     Then the progression bar is at "what we do"
 
   Scenario: Has a back link to navigate to the what help are you looking for today page
-    When I click the "back" link
+    When I click the back link
     Then I am on the "what help are you looking for today" page
 
   Scenario: Clicking the skip to check eligibility button navigates to the check eligibility page

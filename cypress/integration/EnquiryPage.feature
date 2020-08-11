@@ -17,5 +17,5 @@ Feature: Enquiry Page
     Then I am on the "what help are you looking for today" page
 
   Scenario: Has a back link to navigate to the landing page
-    When I click the "back" link
+    When I click the back link
     Then I am on the "landing" page
