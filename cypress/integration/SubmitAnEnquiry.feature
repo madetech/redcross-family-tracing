@@ -14,7 +14,14 @@ Feature: Submit an enquiry Page
   Scenario: Has all the form fields
     Then I see the "First name" text input
     Then I see the "Last name" text input
+    Then I see the "Email" text input
+    Then I see the "Phone" text input
+    Then I see the "How should we contact you?" radio group with the following options:
+      | Email        |
+      | Phone        |
+      | Text message |
     Then I see the "Postcode" text input
+    Then I see the "interpreter-needed-primary-language" text input
 
   Scenario: Clicking "Submit Enquiry" does just that
     When I click the "submit enquiry" button

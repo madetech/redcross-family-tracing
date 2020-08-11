@@ -39,8 +39,7 @@
             {{ govukInput({
               label: {
                 text: "First name",
-                classes: "govuk-label--l",
-                isPageHeading: true
+                classes: "govuk-label--m"
               },
               id: "first-name",
               name: "first-name"
@@ -49,21 +48,74 @@
             {{ govukInput({
               label: {
                 text: "Last name",
-                classes: "govuk-label--l",
-                isPageHeading: true
+                classes: "govuk-label--m"
               },
               id: "last-name",
-              name: "lat-name"
+              name: "last-name"
+            }) }}
+
+            {{ govukInput({
+              label: {
+                text: "Email",
+                classes: "govuk-label--m"
+              },
+              id: "email",
+              name: "email"
+            }) }}
+
+            {{ govukInput({
+              label: {
+                text: "Phone",
+                classes: "govuk-label--m"
+              },
+              id: "phone",
+              name: "phone"
+            }) }}
+
+            {{ govukRadios({
+              idPrefix: "how-should-we-contact-you",
+              name: "how-should-we-contact-you",
+              fieldset: {
+                legend: {
+                  text: "How should we contact you?",
+                  classes: "govuk-fieldset__legend--m"
+                }
+              },
+              items: [
+                {
+                  value: "email",
+                  text: "Email"
+                },
+                {
+                  value: "phone",
+                  text: "Phone"
+                },
+                {
+                  value: "text-message",
+                  text: "Text message"
+                }
+              ]
             }) }}
 
             {{ govukInput({
               label: {
                 text: "Postcode",
-                classes: "govuk-label--l",
-                isPageHeading: true
+                classes: "govuk-label--m"
               },
               id: "postcode",
-              name: "postcode"
+              name: "postcode",
+              hint: {
+                text: "(so we can find your local service)"
+              }
+            }) }}
+
+            {{ govukInput({
+              label: {
+                text: "If you will need an interpreter, please enter your primary language",
+                classes: "govuk-label--m"
+              },
+              id: "interpreter-needed-primary-language",
+              name: "interpreter-needed-primary-language"
             }) }}
 
             {{ redcrossButton({
