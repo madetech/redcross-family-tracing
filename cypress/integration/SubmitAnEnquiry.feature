@@ -6,6 +6,9 @@ Feature: Submit an enquiry Page
   Background:
     Given I visit the "submit an enquiry" page
 
+  Scenario: Progression Bar shows first dot
+    Then the progression bar is at "submit an enquiry"
+
   # ToDo:
   # Scenario: Has a back link to navigate to the TBC page
   #  When I click the back link
