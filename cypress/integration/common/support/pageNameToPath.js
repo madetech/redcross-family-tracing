@@ -1,6 +1,9 @@
-// Keep alphabetical for easy finding :-)
+// Please keep alphabetical for easy finding :-)
 export const pageNameToPath = {
+  'actively searching information': '/finding-searching',
   'check eligibility': '/check-eligibility',
+  'eligible for both': '/eligible-both',
+  'eligible for one': '/eligible-one',
   'family reunion': '/family-reunion',
   'how did you lose contact with your family': '/how-lose-contact',
   landing: '/',
@@ -10,15 +13,14 @@ export const pageNameToPath = {
   'redcross find local missing family service':
     // eslint-disable-next-line max-len
     'https://www.redcross.org.uk/get-help/find-missing-family/find-your-local-missing-family-service',
-  'salvation army family tracing': 'https://www.salvationarmy.org.uk/family-tracing',
-  'send message to relatives': '/relative-message',
-  'where should we start looking': '/where-start-looking',
-  'we cant help with your enquiry': '/not-eligible',
+  'registering missing people information': '/finding-registering',
   'relatives in hiding': '/in-hiding',
+  'salvation army family tracing': 'https://www.salvationarmy.org.uk/family-tracing',
+  'send enquiry': '/send-enquiry',
+  'send message to relatives': '/relative-message',
+  'submit an enquiry': '/submit-an-enquiry',
+  'we cant help with your enquiry': '/not-eligible',
   'we find families in two ways': '/find-two-ways',
   'what help are you looking for today': '/what-help',
-  'registering missing people information': '/finding-registering',
-  'actively searching information': '/finding-searching',
-  'eligible for both': '/eligible-both',
-  'eligible for one': '/eligible-one'
+  'where should we start looking': '/where-start-looking'
 };
