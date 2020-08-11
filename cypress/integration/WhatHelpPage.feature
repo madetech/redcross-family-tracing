@@ -24,7 +24,7 @@ Feature: What Help Page
     Then I am on the "family reunion" page
 
   Scenario: Selecting Sending a message to hard to reach relatives and clicking continue navigates to the Family Reunion page
-    When I select "Sending a message to hard to reach relatives" radio button
+    When I select "sending a message to hard to reach relatives" radio button
     Then I click the "continue" button
     Then I am on the "send message to relatives" page
 

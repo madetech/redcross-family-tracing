@@ -1,7 +1,7 @@
 import { Then, When } from 'cypress-cucumber-preprocessor/steps';
 import { pageNameToPath } from './support/pageNameToPath';
 import { elementNameToClass } from './support/elementNameToClass';
-import { textToId } from './support/textToValue';
+import { textToId } from './support/textToId';
 
 When(/^I do nothing$/, () => {});
 

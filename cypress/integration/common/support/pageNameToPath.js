@@ -14,5 +14,7 @@ export const pageNameToPath = {
   'we cant help with your enquiry': '/not-eligible',
   'relatives in hiding': '/in-hiding',
   'we find families in two ways': '/find-two-ways',
-  'what help are you looking for today': '/what-help'
+  'what help are you looking for today': '/what-help',
+  'eligible for both': '/eligible-both',
+  'eligible for one': '/eligible-one'
 };

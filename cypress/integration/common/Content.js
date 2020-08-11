@@ -1,7 +1,7 @@
 import { Then, When } from 'cypress-cucumber-preprocessor/steps';
 import { elementNameToClass } from './support/elementNameToClass';
 import { pageNameToPath } from './support/pageNameToPath';
-import { textToValue } from './support/textToValue';
+import { textToId } from './support/textToId';
 
 function assertElementWithTextLinkingToPageExists(cssSelector, text, pageName) {
   const element = cy.get(cssSelector);
@@ -34,7 +34,8 @@ When(/^I see a "([^"]*)" button linking to the "([^"]*)" page$/, function (butto
 });
 
 When(/^I select "([^"]*)" radio button$/, function (radioText) {
-  cy.get('[type="radio"]').check(textToValue[radioText]);
+  const radioSelector = `input[type="radio"]#${textToId[radioText]}`;
+  cy.get(radioSelector).check();
 });
 
 When(/^I select "([^"]*)" in the "([^"]*)" select box$/, function (value, selectId) {

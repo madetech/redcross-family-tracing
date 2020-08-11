@@ -44,7 +44,15 @@ router.get('/not-eligible', (req, res) => {
 });
 
 router.get('/in-hiding', (req, res) => {
-  res.send('in hiding');
+  res.render('in-hiding');
+});
+
+router.get('/eligible-both', (req, res) => {
+  res.send('eligible both, desktop 38');
+});
+
+router.get('/eligible-one', (req, res) => {
+  res.send('eligible one, desktop 37');
 });
 
 router.post('/director', directorPost);

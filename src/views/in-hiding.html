@@ -1,0 +1,70 @@
+{% from "components/button.njk" import redcrossButton %}
+{% from "components/progression.njk" import redcrossProgression %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{% extends "_layout.html" %}
+
+{% block content %}
+
+  <div class="govuk-width-container">
+
+    <main class="govuk-main-wrapper">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+          {{ redcrossProgression({ active: "2"}) }}
+        </div>
+      </div>
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+
+          {{ govukBackLink({
+                    text: "Back",
+                    href: "/where-start-looking",
+                    classes: "redcross-back-link"
+                }) }}
+        </div>
+      </div>
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+
+          <div class="redcross-content__box">
+            <h1 class="govuk-heading-xl">Are you or your relatives in hiding or in danger?</h1>
+
+            <form method="POST" action="/director">
+              <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+
+                  <div class="govuk-radios">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="in-hiding-yes" name="page" type="radio" value="eligible-one">
+                      <label class="govuk-label govuk-radios__label" for="where-do-you-live"><b>Yes</b> publicly searching for my family could be dangerous</label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="in-hiding-no" name="page" type="radio" value="eligible-both">
+                      <label class="govuk-label govuk-radios__label" for="in-hiding-no"><b>No</b> I’m not worried about searching in public</label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="in-hiding-not-sure" name="page" type="radio" value="eligible-both">
+                      <label class="govuk-label govuk-radios__label" for="in-hiding-not-sure"><b>I'm not sure</b></label>
+                    </div>
+
+                  </div>
+                </fieldset>
+              </div>
+
+              {{ redcrossButton({
+                  text: "continue",
+                  attributes: { id: "continue-button" }
+              }) }}
+            </div>
+          </div>
+        </div>
+
+      </main>
+    </div>
+
+  {% endblock %}}
