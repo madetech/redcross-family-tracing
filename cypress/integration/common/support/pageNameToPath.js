@@ -18,6 +18,7 @@ export const pageNameToPath = {
   'we find families in two ways': '/find-two-ways',
   'what help are you looking for today': '/what-help',
   'registering missing people information': '/finding-registering',
+  'actively searching information': '/finding-searching',
   'eligible for both': '/eligible-both',
   'eligible for one': '/eligible-one'
 };

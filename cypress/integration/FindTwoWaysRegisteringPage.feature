@@ -16,3 +16,7 @@ Feature: Find Two Ways - Registering Missing People Page
   Scenario: Clicking the skip to check eligibility button navigates to the check eligibility page
     When I click the "skip to check eligibility" button
     Then I am on the "check eligibility" page
+
+  Scenario: Clicking the Find out more button navigates to the actively searching information page
+    When I click the "find out more" button
+    Then I am on the "actively searching information" page

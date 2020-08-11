@@ -61,6 +61,10 @@ router.get('/finding-registering', (req, res) => {
   res.render('finding-registering');
 });
 
+router.get('/finding-searching', (req, res) => {
+  res.render('finding-searching');
+});
+
 // 404 errors
 router.get('*', function (req, res) {
   res.status(404).render('error', { errorHeading: 'Page Not Found' });
