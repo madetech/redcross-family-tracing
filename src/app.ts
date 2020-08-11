@@ -1,4 +1,4 @@
-import express from 'express';
+import express, { NextFunction } from 'express';
 
 const path = require('path');
 const nunjucks = require('nunjucks');
@@ -27,6 +27,12 @@ app.set('view engine', 'html');
 
 // Routes
 app.use(require('./routes'));
+
+// Handle other unexpected errors
+app.use(function (error: Error, req: express.Request, res: express.Response, next: NextFunction) {
+  res.status(500).render('error', { errorHeading: 'Something went wrong :-(' });
+  next();
+});
 
 const listeningPort = process.env.PORT || 3000;
 app.listen(listeningPort, () => {
