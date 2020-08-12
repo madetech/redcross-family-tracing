@@ -55,3 +55,5 @@ The app uses SendGrid to send emails to the Red Cross once the 'Make an Equiry' 
 | EMAIL_FROM_NAME  | The name that the enquiry should come from                     |
 | EMAIL_TO_ADDR    | Comma separated list of email addresses to send the enquiry to |
 | EMAIL_SUBJECT    | The subject of the email being sent                            |
+
+These are configured for Production as secrets in GitHub.
