@@ -25,6 +25,12 @@ Feature: Submit an enquiry Page
       | Text message |
     Then I see the "Postcode" text input
     Then I see the "interpreter-needed-primary-language" text input
+    Then I see the "referrer-relationship" radio group with the following options:
+      | Legal professional or advisor |
+      | Social worker                 |
+      | Friend or family              |
+      | Other                         |
+    Then I see the "Referrer's email address" text input
 
   Scenario: Clicking "Submit Enquiry" does just that
     When I click the "submit enquiry" button

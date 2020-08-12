@@ -83,15 +83,15 @@
               },
               items: [
                 {
-                  value: "email",
+                  value: "Email",
                   text: "Email"
                 },
                 {
-                  value: "phone",
+                  value: "Phone",
                   text: "Phone"
                 },
                 {
-                  value: "text-message",
+                  value: "Text message",
                   text: "Text message"
                 }
               ]
@@ -116,6 +116,46 @@
               },
               id: "interpreter-needed-primary-language",
               name: "interpreter-needed-primary-language"
+            }) }}
+
+            <p class="govuk-heading-m">If you have been referred to family tracing by someone else, please enter the following:</p>
+
+            {{ govukRadios({
+              id: "referrer-relationship",
+              name: "referrer-relationship",
+              fieldset: {
+                legend: {
+                  text: "What is their relationship to you?",
+                  classes: "govuk-fieldset__legend--s"
+                }
+              },
+              items: [
+                {
+                  value: "Legal professional or advisor",
+                  text: "Legal professional or advisor"
+                },
+                {
+                  value: "Social worker",
+                  text: "Social worker"
+                },
+                {
+                  value: "Friend or family",
+                  text: "Friend or family"
+                },
+                {
+                  value: "Other",
+                  text: "Other"
+                }
+              ]
+            }) }}
+
+            {{ govukInput({
+              label: {
+                text: "Referrer's email address",
+                classes: "govuk-label--m"
+              },
+              id: "referrers-email-address",
+              name: "referrers-email-address"
             }) }}
 
             {{ redcrossButton({
