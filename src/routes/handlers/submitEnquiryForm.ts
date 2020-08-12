@@ -13,12 +13,20 @@ export function addSubmitEnquiryRoute(router: express.Router) {
     [
       body('first-name').isLength({ min: 1 }).withMessage('First name is required'),
       body('last-name').isLength({ min: 1 }).withMessage('Last name is required'),
-      body('email').isLength({ min: 1 }).withMessage('Email is required'),
+      body('email')
+        .isEmail()
+        .withMessage('Email must be a valid email address')
+        .isLength({ min: 1 })
+        .withMessage('Email is required'),
       body('phone').isLength({ min: 1 }).withMessage('Phone is required'),
       body('how-should-we-contact-you')
         .isLength({ min: 1 })
         .withMessage('How should we contact you? is required'),
-      body('postcode').isLength({ min: 1 }).withMessage('Postcode is required')
+      body('postcode').isLength({ min: 1 }).withMessage('Postcode is required'),
+      body('referrers-email-address')
+        .optional()
+        .isEmail()
+        .withMessage("Referrer's email address must be a valid email address")
     ],
     (req: express.Request, res: express.Response) => {
       const rawErrors = validationResult(req)['errors'];
@@ -32,7 +40,8 @@ export function addSubmitEnquiryRoute(router: express.Router) {
         email: undefined,
         phone: undefined,
         'how-should-we-contact-you': undefined,
-        postcode: undefined
+        postcode: undefined,
+        'referrers-email-address': undefined
       };
       rawErrors.forEach((rawError: any) => {
         errors[rawError['param']] = { text: rawError['msg'] };

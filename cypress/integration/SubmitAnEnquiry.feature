@@ -44,6 +44,15 @@ Feature: Submit an enquiry Page
       | How should we contact you? |
       | Postcode                   |
 
+  Scenario Outline: <fieldName> is must be a valid email
+    When I fill the "<fieldName>" form element
+    And I click the "submit enquiry" button
+    Then I see a "<fieldName> must be a valid email address" error message on the "<fieldName>" form element
+    Examples:
+      | fieldName                           |
+      | Email                               |
+      | Referrer's email address            |
+
   Scenario Outline: <fieldName> is populated when form is submitted with errors
     When I <action> the "<fieldName>" form element
     And I click the "submit enquiry" button
