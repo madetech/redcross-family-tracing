@@ -1,4 +1,4 @@
-import { Then, When } from 'cypress-cucumber-preprocessor/steps';
+import { Then, When, Given } from 'cypress-cucumber-preprocessor/steps';
 import { pageNameToPath } from './support/pageNameToPath';
 import { elementNameToClass } from './support/elementNameToClass';
 import { textToId } from './support/textToId';
@@ -7,6 +7,15 @@ When(/^I do nothing$/, () => {});
 
 When(/^I visit the "([^"]*)" page$/, (pageName) => {
   cy.visit(pageNameToPath[pageName]);
+});
+
+Given(/^I visit the "([^"]*)" page from the "([^"]*)" page$/, (pageName, refererPageName) => {
+  const referer = `http://localhost:3000${pageNameToPath[refererPageName]}`;
+  cy.visit(pageNameToPath[pageName], {
+    headers: {
+      Referer: referer
+    }
+  });
 });
 
 When(/^I visit a page which does not exist$/, function () {

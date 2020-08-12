@@ -6,7 +6,8 @@ import { body, validationResult } from 'express-validator';
 export function addSubmitEnquiryRoute(router: express.Router) {
   const path = '/submit-an-enquiry';
   router.get(path, (req: express.Request, res: express.Response) => {
-    res.render('submit-an-enquiry');
+    const backLink = req.headers['referer'];
+    res.render('submit-an-enquiry', { backLink });
   });
   router.post(
     path,
