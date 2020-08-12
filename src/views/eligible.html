@@ -43,16 +43,37 @@
 
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-one-half">
-          <p class="govuk-body govuk-!-font-weight-bold">Missing persons register</p>
+          <p class="govuk-body govuk-!-font-weight-bold">
+            <img class="redcross-image--icon" src="/assets/images/green-check.svg"/>
+            Missing persons register
+          </p>
           <img src="/assets/images/trace-the-face-1.png" alt="Image of a a caseworker and client pointing at a computer screen showing faces of people looking for their family.">
           <p class="govuk-body govuk-body govuk-!-font-weight-bold redcross-content--success">You are eligible for this service</p>
-          <p class="govuk-body"><span class="govuk-body govuk-!-font-weight-bold">It's private:</span> Your information is only shared with the Red Cross</p>
-          <p class="govuk-body"><span class="govuk-body govuk-!-font-weight-bold">It's quick:</span> You can register online, or at your local Red Cross tracing service</p>
-          <p class="govuk-body"><span class="govuk-body govuk-!-font-weight-bold">It can work:</span> 42 people found their family this way in 2019</p>
+          <p class="govuk-body">
+            <img class="redcross-image--icon" src="/assets/images/private.svg"/>
+            <span class="govuk-body govuk-!-font-weight-bold">It's private:</span> Your information is only shared with the Red Cross
+          </p>
+          <p class="govuk-body">
+            <img class="redcross-image--icon" src="/assets/images/quick.svg"/>
+            <span class="govuk-body govuk-!-font-weight-bold">It's quick:</span> You can register online, or at your local Red Cross tracing service
+          </p>
+          <p class="govuk-body">
+            <img class="redcross-image--icon" src="/assets/images/red-check.svg"/>
+            <span class="govuk-body govuk-!-font-weight-bold">It can work:</span> 42 people found their family this way in 2019
+          </p>
         </div>
 
         <div class="govuk-grid-column-one-half">
-          <p class="govuk-body govuk-!-font-weight-bold">Actively searching</p>
+          <p class="govuk-body govuk-!-font-weight-bold">
+
+            {% if eligibleBoth %}
+              <img class="redcross-image--icon" src="/assets/images/green-check.svg"/>
+            {% else %}
+              <img class="redcross-image--icon" src="/assets/images/red-cross.svg"/>
+            {% endif %}
+
+            Actively searching
+          </p>
           <img src="/assets/images/red-cross-volunteer-bike.png" alt="Image of a uniformed Red Cross volunteer on a bike, searching for family in a rural village in the Congo.">
 
           {% if showNotSureAdvice %}
@@ -82,9 +103,18 @@
           {% else %}
             <div id="active-search-both-services">
               <p class="govuk-body govuk-body govuk-!-font-weight-bold redcross-content--success">You are eligible for this service</p>
-              <p class="govuk-body"><span class="govuk-!-font-weight-bold">It's public:</span> we share your info with people who can help us find your family.</p>
-              <p class="govuk-body"><span class="govuk-body govuk-!-font-weight-bold">It takes time:</span> searches can take months, but often take years.</p>
-              <p class="govuk-body"><span class="govuk-body govuk-!-font-weight-bold">It's thorough:</span> we visit villages and camps, send messages &amp; check records.</p>
+              <p class="govuk-body">
+                <img class="redcross-image--icon" src="/assets/images/public.svg"/>
+                <span class="govuk-!-font-weight-bold">It's public:</span> we share your info with people who can help us find your family.
+              </p>
+              <p class="govuk-body">
+                <img class="redcross-image--icon" src="/assets/images/time.svg"/>
+                <span class="govuk-body govuk-!-font-weight-bold">It takes time:</span> searches can take months, but often take years.
+              </p>
+              <p class="govuk-body">
+                <img class="redcross-image--icon" src="/assets/images/red-check.svg"/>
+                <span class="govuk-body govuk-!-font-weight-bold">It's thorough:</span> we visit villages and camps, send messages &amp; check records.
+              </p>
             </div>
           {% endif %}
         </div>
