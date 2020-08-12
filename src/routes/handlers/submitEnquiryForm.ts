@@ -22,6 +22,10 @@ export function addSubmitEnquiryRoute(router: express.Router) {
     ],
     (req: express.Request, res: express.Response) => {
       const rawErrors = validationResult(req)['errors'];
+      if (rawErrors.length === 0) {
+        res.redirect(307, '/send-enquiry');
+        return;
+      }
       const errors: any = {
         'first-name': undefined,
         'last-name': undefined,
