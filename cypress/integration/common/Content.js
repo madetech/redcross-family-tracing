@@ -55,3 +55,19 @@ Given(/^I do not see a link to the "([^"]*)" page$/, function (pageName) {
 Then(/^I see a link to the "([^"]*)" page$/, function (pageName) {
   cy.get(`a[href="${pageNameToPath[pageName]}`).should('be.visible');
 });
+
+Then(/^I should see the I'm not sure advice/, function () {
+  cy.get('#active-search-advice-not-sure').should('exist');
+});
+
+Then(/^I should see the no active countries advice/, function () {
+  cy.get('#active-search-advice-no-active-countries').should('exist');
+});
+
+Then(/^I should see the no public services advice/, function () {
+  cy.get('#active-search-advice-no-public-services').should('exist');
+});
+
+Then(/^I should see that both services are eligible/, function () {
+  cy.get('#active-search-both-services').should('exist');
+});

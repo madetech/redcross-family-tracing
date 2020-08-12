@@ -7,6 +7,8 @@ export const textToId = {
   'find out more': 'find-out-more-button',
   'finding family': 'what-help',
   "i'm not sure": 'in-hiding-not-sure',
+  "i'm not sure they could be anywhere": 'where-not-sure',
+  'make an enquiry': 'make-an-enquiry-button',
   "no i'm not worried about searching in public": 'in-hiding-no',
   'one to three countries': 'where-country',
   'sending a message to hard to reach relatives': 'what-help-3',

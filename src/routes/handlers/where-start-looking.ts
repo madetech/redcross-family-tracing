@@ -28,12 +28,12 @@ export function wherePost(req: express.Request, res: express.Response) {
         res.redirect('/in-hiding');
         break;
       } else {
-        res.send('no active countries');
+        res.redirect('/eligible-no-country-active');
         break;
       }
     }
     case 'not-sure': {
-      res.send('Im not sure');
+      res.redirect('/eligible-country-not-sure');
       break;
     }
     default: {

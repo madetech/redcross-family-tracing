@@ -48,11 +48,25 @@ router.get('/in-hiding', (req, res) => {
 });
 
 router.get('/eligible-both', (req, res) => {
-  res.send('eligible both, desktop 38');
+  res.render('eligible', { eligibleBoth: true, backLink: '/in-hiding' });
 });
 
-router.get('/eligible-one', (req, res) => {
-  res.send('eligible one, desktop 37');
+router.get('/eligible-country-not-sure', (req, res) => {
+  res.render('eligible', { showNotSureAdvice: true, backLink: '/where-start-looking' });
+});
+
+router.get('/eligible-no-country-active', (req, res) => {
+  res.render('eligible', {
+    showNoActiveCountriesAdvice: true,
+    backLink: '/where-start-looking'
+  });
+});
+
+router.get('/eligible-not-public', (req, res) => {
+  res.render('eligible', {
+    showNoPublicServicesAdvice: true,
+    backLink: '/in-hiding'
+  });
 });
 
 router.post('/director', directorPost);

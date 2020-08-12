@@ -146,3 +146,11 @@ html {
     margin: 14px;
   }
 }
+
+.redcross-content--success {
+  color: $redcross-success-colour;
+}
+
+.redcross-content--fail {
+  color: $redcross-fail-colour;
+}
