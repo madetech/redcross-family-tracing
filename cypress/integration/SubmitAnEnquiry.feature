@@ -32,6 +32,37 @@ Feature: Submit an enquiry Page
       | Other                         |
     Then I see the "Referrer's email address" text input
 
-  Scenario: Clicking "Submit Enquiry" does just that
+  Scenario Outline: <fieldName> is required
     When I click the "submit enquiry" button
-    Then I am on the "send enquiry" page
+    Then I see a "<fieldName> is required" error message on the "<fieldName>" form element
+    Examples:
+      | fieldName                  |
+      | First name                 |
+      | Last name                  |
+      | Email                      |
+      | Phone                      |
+      | How should we contact you? |
+      | Postcode                   |
+
+  Scenario Outline: <fieldName> is populated when form is submitted with errors
+    When I <action> the "<fieldName>" form element
+    And I click the "submit enquiry" button
+    Then the "<fieldName>" form element is <action>ed
+    Examples:
+      | fieldName                           | action |
+      | First name                          | fill   |
+      | Last name                           | fill   |
+      | Email                               | fill   |
+      | Phone                               | fill   |
+      | How should we contact you?          | select |
+      | Postcode                            | fill   |
+      | interpreter-needed-primary-language | fill   |
+      | referrer-relationship               | select |
+      | Referrer's email address            | fill   |
+
+  # Todo: validate email adddresses
+
+  # Todo: Fill out form, figure out what the "then" should be
+  # Scenario: Clicking "Submit Enquiry" does just that
+  #   When I click the "submit enquiry" button
+  #   Then I am on the "send enquiry" page

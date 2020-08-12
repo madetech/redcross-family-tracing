@@ -34,7 +34,7 @@
         <div class="redcross-content__box">
           <h1 class="govuk-heading-xl">Submit an enquiry</h1>
 
-          <form method="POST" action="/send-enquiry">
+          <form method="POST"  novalidate>
 
             {{ govukInput({
               label: {
@@ -42,7 +42,9 @@
                 classes: "govuk-label--m"
               },
               id: "first-name",
-              name: "first-name"
+              name: "first-name",
+              value: body["first-name"],
+              errorMessage: errors["first-name"]
             }) }}
 
             {{ govukInput({
@@ -51,7 +53,9 @@
                 classes: "govuk-label--m"
               },
               id: "last-name",
-              name: "last-name"
+              name: "last-name",
+              value: body["last-name"],
+              errorMessage: errors["last-name"]
             }) }}
 
             {{ govukInput({
@@ -60,7 +64,9 @@
                 classes: "govuk-label--m"
               },
               id: "email",
-              name: "email"
+              name: "email",
+              value: body["email"],
+              errorMessage: errors["email"]
             }) }}
 
             {{ govukInput({
@@ -69,12 +75,15 @@
                 classes: "govuk-label--m"
               },
               id: "phone",
-              name: "phone"
+              name: "phone",
+              value: body["phone"],
+              errorMessage: errors["phone"]
             }) }}
 
             {{ govukRadios({
               idPrefix: "how-should-we-contact-you",
               name: "how-should-we-contact-you",
+              errorMessage: errors["how-should-we-contact-you"],
               fieldset: {
                 legend: {
                   text: "How should we contact you?",
@@ -84,15 +93,18 @@
               items: [
                 {
                   value: "Email",
-                  text: "Email"
+                  text: "Email",
+                  checked: (true if body["how-should-we-contact-you"] === "Email" else false)
                 },
                 {
                   value: "Phone",
-                  text: "Phone"
+                  text: "Phone",
+                  checked: (true if body["how-should-we-contact-you"] === "Phone" else false)
                 },
                 {
                   value: "Text message",
-                  text: "Text message"
+                  text: "Text message",
+                  checked: (true if body["how-should-we-contact-you"] === "Text message" else false)
                 }
               ]
             }) }}
@@ -104,6 +116,8 @@
               },
               id: "postcode",
               name: "postcode",
+              value: body["postcode"],
+              errorMessage: errors["postcode"],
               hint: {
                 text: "(so we can find your local service)"
               }
@@ -115,7 +129,8 @@
                 classes: "govuk-label--m"
               },
               id: "interpreter-needed-primary-language",
-              name: "interpreter-needed-primary-language"
+              name: "interpreter-needed-primary-language",
+              value: body["interpreter-needed-primary-language"]
             }) }}
 
             <p class="govuk-heading-m">If you have been referred to family tracing by someone else, please enter the following:</p>
@@ -132,19 +147,23 @@
               items: [
                 {
                   value: "Legal professional or advisor",
-                  text: "Legal professional or advisor"
+                  text: "Legal professional or advisor",
+                  checked: (true if body["referrer-relationship"] === "Legal professional or advisor" else false)
                 },
                 {
                   value: "Social worker",
-                  text: "Social worker"
+                  text: "Social worker",
+                  checked: (true if body["referrer-relationship"] === "Social worker" else false)
                 },
                 {
                   value: "Friend or family",
-                  text: "Friend or family"
+                  text: "Friend or family",
+                  checked: (true if body["referrer-relationship"] === "Friend or family" else false)
                 },
                 {
                   value: "Other",
-                  text: "Other"
+                  text: "Other",
+                  checked: (true if body["referrer-relationship"] === "Other" else false)
                 }
               ]
             }) }}
@@ -155,7 +174,8 @@
                 classes: "govuk-label--m"
               },
               id: "referrers-email-address",
-              name: "referrers-email-address"
+              name: "referrers-email-address",
+              value: body["referrers-email-address"]
             }) }}
 
             {{ redcrossButton({

@@ -16,7 +16,7 @@
     "sass:watch": "node-sass -w src/sass -o src/assets/css",
     "test:cypress": "node_modules/.bin/cypress run --spec **/*.features",
     "test:cypress:open": "node_modules/.bin/cypress open",
-    "dev": "npm run start:watch & npm run sass:watch"
+    "dev": "NODE_ENV=dev npm run start:watch & npm run sass:watch"
   },
   "nodemonConfig": {
     "exec": "npm run build && npm start",
@@ -34,6 +34,7 @@
   "dependencies": {
     "del": "^5.1.0",
     "express": "^4.17.1",
+    "express-validator": "^6.6.1",
     "govuk-frontend": "^3.8.0",
     "nanoid": "^3.1.12",
     "nunjucks": "^3.2.2",
@@ -52,6 +53,7 @@
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-cypress": "^2.11.1",
     "eslint-plugin-prettier": "^3.1.4",
+    "faker": "^4.1.0",
     "husky": "^4.2.5",
     "node-sass": "^4.14.1",
     "nodemon": "^2.0.4",

@@ -1,6 +1,7 @@
 import * as express from 'express';
 import { directorPost } from './handlers/director';
 import { whereGet, wherePost } from './handlers/where-start-looking';
+import { addSubmitEnquiryRoute } from './handlers/submitEnquiryForm';
 import { sendEnquiryPost } from './handlers/send-enquiry';
 
 const router = express.Router();
@@ -80,9 +81,7 @@ router.get('/finding-searching', (req, res) => {
   res.render('finding-searching');
 });
 
-router.get('/submit-an-enquiry', (req, res) => {
-  res.render('submit-an-enquiry');
-});
+addSubmitEnquiryRoute(router);
 
 router.post('/send-enquiry', sendEnquiryPost);
 
