@@ -83,6 +83,10 @@ router.get('/submit-an-enquiry', (req, res) => {
   res.render('submit-an-enquiry');
 });
 
+router.get('/enquiry-sent', (req, res) => {
+  res.render('enquiry-sent', { enquiryReference: '123456' });
+});
+
 // ToDo: https://trello.com/c/cbLIko8D/44-send-enquiry-desktop-15
 router.post('/send-enquiry', (req, res) => {
   res.send('ToDo: send enquiry, desktop 37\n\n' + JSON.stringify(req.body));

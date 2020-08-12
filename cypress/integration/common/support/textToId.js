@@ -1,5 +1,6 @@
 // Please keep alphabetical for easy finding :-)
 export const textToId = {
+  'back to homepage': 'back-to-homepage-button',
   'bringing family safely to the uk': 'what-help-2',
   'check eligibility': 'check-eligibility-button',
   continue: 'continue-button',

@@ -1,0 +1,49 @@
+{% from "components/button.njk" import redcrossButton %}
+{% from "components/progression.njk" import redcrossProgression %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+{% extends "_layout.html" %}
+
+{% block content %}
+
+  <div class="govuk-width-container">
+
+    <main class="govuk-main-wrapper">
+
+      <div class="redcross-content__box">
+
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+            <div class="govuk-panel govuk-panel--confirmation">
+              <h1 class="govuk-panel__title">
+                Enquiry sent
+              </h1>
+              <div class="govuk-panel__body">
+                Reference number:<br><strong><span id="enquiry-reference">{{ enquiryReference }}</span></strong>
+              </div>
+            </div>
+
+            <h2 class="govuk-heading-l">What happens next?</h2>
+
+            <p class="govuk-body"><strong>1</strong> We will contact you</p>
+            <p class="govuk-body"><strong>2</strong> You will then be asked more information to open a case</p>
+            <p class="govuk-body"><strong>3</strong> Based on your information, we will open a tracing enquiry</p>
+
+            <div class="govuk-inset-text">
+              <p class="govuk-body govuk-!-font-weight-bold">We are experiencing high volumes of enquires<p>
+              <p>That means it may take us a while to get back to you.</p>
+            </div>
+          </div>
+        </div>
+
+        {{ redcrossButton({
+          text: "Back to Homepage",
+          href: "/",
+          attributes: { id: "back-to-homepage-button" }
+        }) }}
+      </div>
+
+    </main>
+  </div>
+
+{% endblock %}}

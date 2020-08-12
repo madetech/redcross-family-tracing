@@ -6,6 +6,7 @@ export const pageNameToPath = {
   'eligible for one no active countries': '/eligible-no-country-active',
   'eligible for one non public': '/eligible-not-public',
   'eligible for one not sure': '/eligible-country-not-sure',
+  'enquiry sent': '/enquiry-sent',
   'family reunion': '/family-reunion',
   'how did you lose contact with your family': '/how-lose-contact',
   landing: '/',

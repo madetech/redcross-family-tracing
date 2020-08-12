@@ -71,3 +71,7 @@ Then(/^I should see the no public services advice/, function () {
 Then(/^I should see that both services are eligible/, function () {
   cy.get('#active-search-both-services').should('exist');
 });
+
+Then(/^I should see an enquiry reference/, function () {
+  cy.get('#enquiry-reference').should('exist');
+});
