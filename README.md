@@ -43,3 +43,15 @@ To apply our standard rules across the codebase run...
 The app uses GitHub Actions to build/test all commits to master and deploys them to Heroku at https://redcross-family-tracing.herokuapp.com/ if the tests are successful.
 
 If they are changed you will need to update the `HEROKU_API_KEY` and `HEROKU_EMAIL` secrets in GitHub.
+
+## Sending of Enquiries
+
+The app uses SendGrid to send emails to the Red Cross once the 'Make an Equiry' form has been submitted. There are a couple of Environment Variables that control this:
+
+| Env. Var         | Details                                                        |
+| ---------------- | -------------------------------------------------------------- |
+| SENDGRID_API_KEY | Obtained from SendGrid, used for authentication                |
+| EMAIL_FROM_ADDR  | The email address that the enquiry should come from            |
+| EMAIL_FROM_NAME  | The name that the enquiry should come from                     |
+| EMAIL_TO_ADDR    | Comma separated list of email addresses to send the enquiry to |
+| EMAIL_SUBJECT    | The subject of the email being sent                            |

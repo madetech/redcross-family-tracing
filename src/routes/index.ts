@@ -1,6 +1,7 @@
 import * as express from 'express';
 import { directorPost } from './handlers/director';
 import { whereGet, wherePost } from './handlers/where-start-looking';
+import { sendEnquiryPost } from './handlers/send-enquiry';
 
 const router = express.Router();
 
@@ -83,13 +84,11 @@ router.get('/submit-an-enquiry', (req, res) => {
   res.render('submit-an-enquiry');
 });
 
-router.get('/enquiry-sent', (req, res) => {
-  res.render('enquiry-sent', { enquiryReference: '123456' });
-});
+router.post('/send-enquiry', sendEnquiryPost);
 
-// ToDo: https://trello.com/c/cbLIko8D/44-send-enquiry-desktop-15
-router.post('/send-enquiry', (req, res) => {
-  res.send('ToDo: send enquiry, desktop 37\n\n' + JSON.stringify(req.body));
+router.get('/enquiry-sent', (req, res) => {
+  const id = req.query.id;
+  res.render('enquiry-sent', { enquiryReference: id });
 });
 
 // 404 errors
