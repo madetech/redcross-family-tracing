@@ -46,7 +46,7 @@ export function addSubmitEnquiryRoute(router: express.Router) {
       rawErrors.forEach((rawError: any) => {
         errors[rawError['param']] = { text: rawError['msg'] };
       });
-      res.render('submit-an-enquiry', { errors, body: req.body });
+      res.render('submit-an-enquiry', { errors, body: req.body, hasErrors: rawErrors.length > 0 });
     }
   );
 }

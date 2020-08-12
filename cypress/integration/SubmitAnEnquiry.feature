@@ -32,6 +32,10 @@ Feature: Submit an enquiry Page
       | Other                         |
     Then I see the "Referrer's email address" text input
 
+  Scenario: Shows an error alert above the form if there are errors
+    And I click the "submit enquiry" button
+    Then I see an error alert above the form
+
   Scenario Outline: <fieldName> is required
     When I click the "submit enquiry" button
     Then I see a "<fieldName> is required" error message on the "<fieldName>" form element

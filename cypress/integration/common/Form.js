@@ -49,3 +49,7 @@ Then(/^the "([^"]*)" form element is (.*)ed$/, function (name, action) {
         .should('not.be.empty');
   }
 });
+
+Then(/^I see an error alert above the form$/, function () {
+  cy.get('.govuk-error-summary').should('exist');
+});
