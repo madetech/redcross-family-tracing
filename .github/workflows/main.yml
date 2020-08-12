@@ -1,54 +1,59 @@
 name: Test and Deploy
 
 on:
-    push:
-        branches:
-            - master
-    pull_request:
+  push:
+    branches:
+      - master
+  pull_request:
 
 jobs:
-    build:
-        runs-on: ubuntu-latest
-        steps:
-            - name: Checkout code
-              uses: actions/checkout@v2
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-            - name: Install dependencies
-              run: npm install
+      - name: Install dependencies
+        run: npm install
 
-            - name: Lint
-              run: npm run lint
+      - name: Lint
+        run: npm run lint
 
-            - name: Transpile
-              run: npm run build
+      - name: Transpile
+        run: npm run build
 
-            - name: Run Cypress end to end tests
-              uses: cypress-io/github-action@v2
-              with:
-                  install: false
-                  start: npm run start
-                  wait-on: http://localhost:3000
-                  spec: cypress/integration/All.features
+      - name: Run Cypress end to end tests
+        uses: cypress-io/github-action@v2
+        with:
+          install: false
+          start: npm run start
+          wait-on: http://localhost:3000
+          spec: cypress/integration/All.features
 
+      - name: Store Cypress screenshot artifacts
+        if: always()
+        uses: actions/upload-artifact@v1
+        with:
+          name: cypress-screenshots
+          path: cypress/screenshots
 
-            - name: Store Cypress screenshot artifacts
-              if: always()
-              uses: actions/upload-artifact@v1
-              with:
-                  name: cypress-screenshots
-                  path: cypress/screenshots
+      - name: Store Cypress video artifacts
+        if: always()
+        uses: actions/upload-artifact@v1
+        with:
+          name: cypress-videos
+          path: cypress/videos
 
-            - name: Store Cypress video artifacts
-              if: always()
-              uses: actions/upload-artifact@v1
-              with:
-                  name: cypress-videos
-                  path: cypress/videos
-
-            - name: Deploy to Production
-              if: github.ref == 'refs/heads/master'
-              uses: akhileshns/heroku-deploy@v3.4.6
-              with:
-                  heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-                  heroku_app_name: "redcross-family-tracing"
-                  heroku_email: ${{secrets.HEROKU_EMAIL}}
+      - name: Deploy to Production
+        if: github.ref == 'refs/heads/master'
+        uses: akhileshns/heroku-deploy@v3.4.6
+        with:
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_app_name: "redcross-family-tracing"
+          heroku_email: ${{secrets.HEROKU_EMAIL}}
+        env:
+          SENDGRID_API_KEY: ${{secrets.SENDGRID_API_KEY}}
+          EMAIL_FROM_ADDR: ${{secrets.EMAIL_FROM_ADDR}}
+          EMAIL_FROM_NAME: ${{secrets.EMAIL_FROM_NAME}}
+          EMAIL_TO_ADDR: ${{secrets.EMAIL_TO_ADDR}}
+          EMAIL_SUBJECT: ${{secrets.EMAIL_SUBJECT}}
