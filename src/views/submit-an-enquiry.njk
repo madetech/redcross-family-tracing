@@ -145,51 +145,66 @@
               value: body["interpreter-needed-primary-language"]
             }) }}
 
-            <p class="govuk-heading-m">If you have been referred to family tracing by someone else, please enter the following:</p>
-
             {{ govukRadios({
-              id: "referrer-relationship",
-              name: "referrer-relationship",
+              id: "how-old-are-you",
+              name: "how-old-are-you",
+              errorMessage: errors["how-old-are-you"],
               fieldset: {
                 legend: {
-                  text: "What is their relationship to you?",
-                  classes: "govuk-fieldset__legend--s"
+                  text: "How old are you?",
+                  classes: "govuk-fieldset__legend--m"
                 }
               },
               items: [
                 {
-                  value: "Legal professional or advisor",
-                  text: "Legal professional or advisor",
-                  checked: (true if body["referrer-relationship"] === "Legal professional or advisor" else false)
+                  value: "Over 18",
+                  text: "Over 18",
+                  checked: (true if body["how-old-are-you"] === "Over 18" else false)
                 },
                 {
-                  value: "Social worker",
-                  text: "Social worker",
-                  checked: (true if body["referrer-relationship"] === "Social worker" else false)
-                },
-                {
-                  value: "Friend or family",
-                  text: "Friend or family",
-                  checked: (true if body["referrer-relationship"] === "Friend or family" else false)
-                },
-                {
-                  value: "Other",
-                  text: "Other",
-                  checked: (true if body["referrer-relationship"] === "Other" else false)
+                  value: "Under 18",
+                  text: "Under 18",
+                  checked: (true if body["how-old-are-you"] === "Under 18" else false)
                 }
               ]
             }) }}
 
+            <p class="govuk-heading-m">If you are under 18, please provide the details of a trusted carer or support worker:</p>
+
+            <blockquote>
             {{ govukInput({
               label: {
-                text: "Referrer's email address",
+                text: "First name",
                 classes: "govuk-label--m"
               },
-              id: "referrers-email-address",
-              name: "referrers-email-address",
-              value: body["referrers-email-address"],
-              errorMessage: errors["referrers-email-address"]
+              id: "referrer-first-name",
+              name: "referrer-first-name",
+              value: body["referrer-first-name"],
+              errorMessage: errors["referrer-first-name"]
             }) }}
+
+            {{ govukInput({
+              label: {
+                text: "Last name",
+                classes: "govuk-label--m"
+              },
+              id: "referrer-last-name",
+              name: "referrer-last-name",
+              value: body["referrer-last-name"],
+              errorMessage: errors["referrer-last-name"]
+            }) }}
+
+            {{ govukInput({
+              label: {
+                text: "Email",
+                classes: "govuk-label--m"
+              },
+              id: "referrer-email",
+              name: "referrer-email",
+              value: body["referrer-email"],
+              errorMessage: errors["referrer-email"]
+            }) }}
+            </blockquote>
 
             {{ redcrossButton({
               text: "Submit Enquiry",

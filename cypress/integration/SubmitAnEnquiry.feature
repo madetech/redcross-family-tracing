@@ -24,12 +24,12 @@ Feature: Submit an enquiry Page
       | Text message |
     Then I see the "Postcode" text input
     Then I see the "interpreter-needed-primary-language" text input
-    Then I see the "referrer-relationship" radio group with the following options:
-      | Legal professional or advisor |
-      | Social worker                 |
-      | Friend or family              |
-      | Other                         |
-    Then I see the "Referrer's email address" text input
+    Then I see the "How old are you?" radio group with the following options:
+      | Over 18  |
+      | Under 18 |
+    Then I see the "referrer-first-name" text input
+    Then I see the "referrer-last-name" text input
+    Then I see the "referrer-email" text input
 
   Scenario: Shows an error alert above the form if there are errors
     And I click the "submit enquiry" button
@@ -46,15 +46,32 @@ Feature: Submit an enquiry Page
       | Phone                      |
       | How should we contact you? |
       | Postcode                   |
+      | How old are you?           |
 
-  Scenario Outline: <fieldName> is must be a valid email
-    When I fill the "<fieldName>" form element
+  Scenario: Email must be a valid email
+    When I fill the "email" form element
     And I click the "submit enquiry" button
-    Then I see a "<fieldName> must be a valid email address" error message on the "<fieldName>" form element
-    Examples:
-      | fieldName                           |
-      | Email                               |
-      | Referrer's email address            |
+    Then I see a "Email must be a valid email address" error message on the "email" form element
+
+  Scenario: Referrer details are not required if over 18
+    When I select "over 18" radio button
+    And I click the "submit enquiry" button
+    Then I do not see an error message on the "referrer-first-name" form element
+    And I do not see an error message on the "referrer-last-name" form element
+    And I do not see an error message on the "referrer-email" form element
+
+  Scenario: Referrer details are required if under 18
+    When I select "under 18" radio button
+    And I click the "submit enquiry" button
+    Then I see a "First name is required" error message on the "referrer-first-name" form element
+    And I see a "Last name is required" error message on the "referrer-last-name" form element
+    And I see a "Email is required" error message on the "referrer-email" form element
+
+  Scenario: Referrer email must be a valid email
+    Given I select "under 18" radio button
+    When I fill the "referrer-email" form element
+    And I click the "submit enquiry" button
+    Then I see a "Email must be a valid email address" error message on the "referrer-email" form element
 
   Scenario Outline: <fieldName> is populated when form is submitted with errors
     When I <action> the "<fieldName>" form element
@@ -69,12 +86,13 @@ Feature: Submit an enquiry Page
       | How should we contact you?          | select |
       | Postcode                            | fill   |
       | interpreter-needed-primary-language | fill   |
-      | referrer-relationship               | select |
-      | Referrer's email address            | fill   |
+      | How old are you?                    | select |
+      | referrer-first-name                 | fill   |
+      | referrer-last-name                  | fill   |
+      | referrer-email                      | fill   |
 
-  # Todo: validate email adddresses
-
-  # Todo: Fill out form, figure out what the "then" should be
-  # Scenario: Clicking "Submit Enquiry" does just that
-  #   When I click the "submit enquiry" button
-  #   Then I am on the "send enquiry" page
+   Scenario: Clicking "Submit Enquiry" does just that
+     Given I have filled all the fields
+     When I click the "submit enquiry" button
+     # If the environment variables for SendGrid are not set, it onl,y gets as far as /send-enquiry
+     Then I am on the "send enquiry" or "enquiry sent" page

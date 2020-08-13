@@ -11,11 +11,13 @@ export const textToId = {
   "i'm not sure they could be anywhere": 'where-not-sure',
   'make an enquiry': 'make-an-enquiry-button',
   "no i'm not worried about searching in public": 'in-hiding-no',
+  'over 18': 'how-old-are-you',
   'one to three countries': 'where-country',
   'sending a message to hard to reach relatives': 'what-help-3',
   'skip to check eligibility': 'skip-to-check-button',
   'something else, such as adoption or a family dispute': 'lose-contact-2',
   start: 'start-button',
   'submit enquiry': 'submit-enquiry-button',
+  'under 18': 'how-old-are-you-2',
   'yes publicly search for my family could be dangerous': 'in-hiding-yes'
 };

@@ -17,13 +17,15 @@ export function sendEnquiryPost(req: express.Request, res: express.Response) {
 function buildContent(enquiryId: string, req: express.Request): string {
   const firstName: string = req.body['first-name'];
   const lastName: string = req.body['last-name'];
-  const email = req.body['email'] || '';
-  const phone = req.body['phone'] || '';
-  const postcode = req.body['postcode'] || '';
+  const email = req.body['email'];
+  const phone = req.body['phone'];
+  const postcode = req.body['postcode'];
   const howContact = req.body['how-should-we-contact-you'];
   const interpreter = req.body['interpreter-needed-primary-language'];
-  const referrerRelationship = req.body['referrer-relationship'];
-  const referrersEmailAddress = req.body['referrers-email-address'];
+  const age = req.body['how-old-are-you'];
+  const referrerFirstName = req.body['referrer-first-name'];
+  const referrerLastName = req.body['referrer-last-name'];
+  const referrerEmail = req.body['referrer-email'];
 
   let builder = new StringBuilder('Family Tracing Enquiry');
   builder.Append(newLine);
@@ -37,8 +39,11 @@ function buildContent(enquiryId: string, req: express.Request): string {
   builder.Append(newLine);
   builder.AppendFormat('Interpreter language: {0} {1}', interpreter || 'N/A', newLine);
   builder.Append(newLine);
-  builder.AppendFormat('Referer relationship: {0} {1}', referrerRelationship, newLine);
-  builder.AppendFormat('Referer email: {0} {1}', referrersEmailAddress, newLine);
+  builder.AppendFormat('Age: {0} {1}', age, newLine);
+  builder.Append(newLine);
+  builder.AppendFormat('Referer first name: {0} {1}', referrerFirstName || 'N/A', newLine);
+  builder.AppendFormat('Referer last name: {0} {1}', referrerLastName || 'N/A', newLine);
+  builder.AppendFormat('Referer email: {0} {1}', referrerEmail || 'N/A', newLine);
 
   return builder.ToString();
 }

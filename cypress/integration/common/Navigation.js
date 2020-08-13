@@ -41,6 +41,13 @@ When(/^I click the back link$/, () => {
 
 Then(/^I am on the "([^"]*)" page$/, (pageName) => {
   cy.location().should((loc) => {
-    expect(loc.pathname).to.eq(pageNameToPath[pageName]);
+    expect(loc['pathname']).to.eq(pageNameToPath[pageName]);
+  });
+});
+
+Then(/^I am on the "([^"]*)" or "([^"]*)" page$/, (pageName1, pageName2) => {
+  cy.location().should((loc) => {
+    expect([pageNameToPath[pageName1], pageNameToPath[pageName2]].includes(loc['pathname'])).to.be
+      .true;
   });
 });

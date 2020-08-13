@@ -12,22 +12,33 @@ export function addSubmitEnquiryRoute(router: express.Router) {
   router.post(
     path,
     [
-      body('first-name').isLength({ min: 1 }).withMessage('First name is required'),
-      body('last-name').isLength({ min: 1 }).withMessage('Last name is required'),
+      body('first-name').notEmpty().withMessage('First name is required'),
+      body('last-name').notEmpty().withMessage('Last name is required'),
       body('email')
         .isEmail()
         .withMessage('Email must be a valid email address')
-        .isLength({ min: 1 })
+        .notEmpty()
         .withMessage('Email is required'),
-      body('phone').isLength({ min: 1 }).withMessage('Phone is required'),
+      body('phone').notEmpty().withMessage('Phone is required'),
       body('how-should-we-contact-you')
-        .isLength({ min: 1 })
+        .notEmpty()
         .withMessage('How should we contact you? is required'),
-      body('postcode').isLength({ min: 1 }).withMessage('Postcode is required'),
-      body('referrers-email-address')
-        .optional()
+      body('postcode').notEmpty().withMessage('Postcode is required'),
+      body('how-old-are-you').notEmpty().withMessage('How old are you? is required'),
+      body('referrer-first-name')
+        .if(body('how-old-are-you').equals('Under 18'))
+        .notEmpty()
+        .withMessage('First name is required'),
+      body('referrer-last-name')
+        .if(body('how-old-are-you').equals('Under 18'))
+        .notEmpty()
+        .withMessage('Last name is required'),
+      body('referrer-email')
+        .if(body('how-old-are-you').equals('Under 18'))
         .isEmail()
-        .withMessage("Referrer's email address must be a valid email address")
+        .withMessage('Email must be a valid email address')
+        .notEmpty()
+        .withMessage('Email is required')
     ],
     (req: express.Request, res: express.Response) => {
       const rawErrors = validationResult(req)['errors'];
@@ -42,7 +53,10 @@ export function addSubmitEnquiryRoute(router: express.Router) {
         phone: undefined,
         'how-should-we-contact-you': undefined,
         postcode: undefined,
-        'referrers-email-address': undefined
+        'how-old-are-you': undefined,
+        'referrer-first-name': undefined,
+        'referrer-last-name': undefined,
+        'referrer-email': undefined
       };
       rawErrors.forEach((rawError: any) => {
         errors[rawError['param']] = { text: rawError['msg'] };
