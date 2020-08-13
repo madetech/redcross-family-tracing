@@ -16,12 +16,12 @@
     ? document.body.className + ' js-enabled' : 'js-enabled');
 </script>
 
-{% include "./_header.html" %}
+{% include "./_header.njk" %}
 
 {% block content %}
 {% endblock %}
 
-{% include "./_footer.html" %}
+{% include "./_footer.njk" %}
 
 <script src="/assets/javascript/all.js"></script>
 <script>window.GOVUKFrontend.initAll()</script>
