@@ -57,3 +57,14 @@ The app uses SendGrid to send emails to the Red Cross once the 'Make an Equiry' 
 | EMAIL_SUBJECT    | The subject of the email being sent                            |
 
 These are configured for Production as secrets in GitHub.
+
+## Useful Folders
+
+| File / Folder | Details |
+| ------------- | ----------------- |
+| src/assets/data/active-countries.txt | List of ISO 3166 two digit country codes that are active |
+| src/assets/routes | Defines the urls of the website and what views are used for each |
+| src/sass | The styling for the site written using SASS, overridden from GDS design system |
+| src/views | Where all of the HTML / Content for each page lives. Using Nunjucks templates |
+| src/app.ts | This is the entry point to the application and where everything is setup |
+| cypress/integration | BDD feature definitions for the website tests |
